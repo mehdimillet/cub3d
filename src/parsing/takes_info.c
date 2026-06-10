@@ -6,9 +6,16 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/04 16:37:49 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/10 15:28:07 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+void    read_file(t_cub *cub, char *file)
+{
+    char    *line;
+    int     fd;
+
+    fd = 
+}

@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef ENUM_H
+# define ENUM_H
 //in map.h
 typedef enum e_check
 {
@@ -11,3 +11,4 @@ typedef enum e_check
     C = 0
 }t_check;
 
+#endif

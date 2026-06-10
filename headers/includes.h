@@ -1,5 +1,7 @@
-#pragma once
+#ifndef INCLUDES_H
+# define INCLUDES_H
 
+# include "libft.h"
 # include <math.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -8,3 +10,5 @@
 # include <unistd.h>
 # include <stdint.h>
 // # include "minilibx-linux/mlx.h"
+
+#endif 

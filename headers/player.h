@@ -1,7 +1,10 @@
-#pragma once
+#ifndef PLAYER_H
+# define PLAYER_H
 
 typedef struct s_player
 {
     double  line;
     double  column;
 }t_player;
+
+#endif
