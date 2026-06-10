@@ -1,7 +1,5 @@
 #pragma once
 
-typedef enum t_check;
-
 //color for the celling and the floor
 typedef struct s_color
 {
