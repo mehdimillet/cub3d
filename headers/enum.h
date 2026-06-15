@@ -1,14 +1,16 @@
 #ifndef ENUM_H
 # define ENUM_H
 //in map.h
+
+//false = no seen and true = seen
 typedef enum e_check
 {
-    NO = 0,
-    SO = 0,
-    WE = 0,
-    EA = 0,
-    F = 0,
-    C = 0
+    NO,
+    SO,
+    WE,
+    EA,
+    F,
+    C
 }t_check;
 
 #endif

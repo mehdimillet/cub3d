@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_struct.c                                      :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 16:38:01 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 11:55:29 by memillet         ###   ########.fr       */
+/*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
+/*   Updated: 2026/06/15 12:07:06 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+# include "../../headers/cub3d.h"
 
-// void    init_cub(t_cub *cub)
-// {
-    
-// }
-
-// void    init_player()
-// {
-    
-// }
+int start(int ac, char **av)
+{
+    if (check_filename(av[1]) != 0)
+        return (1);
+}

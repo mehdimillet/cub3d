@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_struct.c                                      :+:      :+:    :+:   */
+/*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 16:38:01 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 11:55:29 by memillet         ###   ########.fr       */
+/*   Created: 2026/06/15 11:54:15 by memillet          #+#    #+#             */
+/*   Updated: 2026/06/15 13:41:29 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+# include "../../headers/cub3d.h"
 
-// void    init_cub(t_cub *cub)
-// {
-    
-// }
+int	check_filename(char *map_name)
+{
+	int	len;
 
-// void    init_player()
-// {
-    
-// }
+	len = ft_strlen(map_name);
+	if (len < 4 || ft_strcmp(&map_name[len - 4], ".cub") != 0)
+		return (printf("wrong file extension\n"), 1);
+	return (0);
+}

@@ -5,6 +5,7 @@ typedef struct s_player
 {
     double  line;
     double  column;
+    char    orientation;
 }t_player;
 
 #endif
