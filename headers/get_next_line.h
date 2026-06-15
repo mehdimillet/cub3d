@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 17:16:15 by memillet         ###   ########.fr       */
+/*   Created: 2025/11/10 22:38:10 by memillet          #+#    #+#             */
+/*   Updated: 2026/06/15 17:03:53 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../headers/cub3d.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int start(char **av)
-{
-    int fd;
-    int len;
-    char    **file;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-    if (check_filename(av[1]) != 0)
-        return (1);
-    fd = get_fd(av[1]);
-    len = count_line(fd);
-    close (fd);
-    fd = get_fd(av[1]);
-    file = read_file(fd, len);
-    close(fd);
-    for (int i = 0; file[i] != NULL; i++)
-    {
-        printf("%s\n", file[i]);
-    }
-    return(0);
-}
+# ifndef MAX_FD
+#  define MAX_FD 1024
+# endif
+
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+// # include "../../libft.h"
+
+char	*get_next_line(int fd);
+int	my_strlen(const char *str);
+
+#endif

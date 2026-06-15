@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aandreo <aandreo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 00:51:20 by aandreo           #+#    #+#             */
-/*   Updated: 2026/02/26 00:58:18 by aandreo          ###   ########.fr       */
+/*   Updated: 2026/06/15 17:19:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,16 +85,6 @@ t_list		*ft_lstnew(void *content);
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int			ft_lstsize(t_list *lst);
-
-//get_next_line
-
-char		*got_no_name(char **dest);
-char		*ft_get_out(char **dest);
-char		*get_next_line(int fd);
-char		*new_beginning(char *s);
-char		*ft_extraction(char *s);
-char		*ft_strsuperjoin(char *s1, char *s2);
-int			buffer_check(char *s);
 
 //moi qu'ai rajoute
 

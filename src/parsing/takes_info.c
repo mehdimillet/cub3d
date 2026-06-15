@@ -6,13 +6,13 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 14:51:37 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/15 16:44:54 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
-int	get_fd(t_cub *cub, char *file)
+int	get_fd(char *file)
 {
 	int		fd;
 
@@ -26,15 +26,15 @@ int	get_fd(t_cub *cub, char *file)
 		return (fd);
 }
 
-void	check_file(char *line, t_cub *info, int i)
-{
-	if (line[i] == "N" && line[i] + 1 == "O")
-	{
+// void	check_file(char *line, t_cub *info, int i)
+// {
+// 	if (line[i] == "N" && line[i] + 1 == "O")
+// 	{
 
-	}
-}
+// 	}
+// }
 
-char	**read_file(int fd)
+char	**read_file(int fd, int nbline)
 {
 	char	*line;
 	char	**file;
@@ -42,20 +42,22 @@ char	**read_file(int fd)
 	int		len;
 
 	i = 0;
-	file = malloc(sizeof (char *));
-	while (line = get_next_line(fd))
+	file = malloc(sizeof (char *) * (nbline + 1));
+	if (!file)
+		return (NULL);
+	while ((line = get_next_line(fd)))
 	{
 		len = ft_strlen(line);
-		file[i] = realloc(file ,sizeof(char) * (len + 1));
+		file[i] = malloc(sizeof(char) * (len + 1));
 		if (!file[i])
-			return (free_tab(file), NULL);
+			return (free_tab(file), free(line), NULL);
 		ft_strlcpy(file[i], line, len + 1);
-		if (!file[i])
-			return (free_tab(file), NULL);
-		file[i][len] = '\0';
+		if (file[i][len - 1] == '\n')
+			file[i][len - 1] = '\0';
+		free(line);
 		i++;
 	}
 	i++;
-	file[i + 1] == NULL;
-	return (file);
+	file[i + 1] = NULL;
+	return (close(fd), file);
 }
