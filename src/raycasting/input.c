@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:17 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/16 14:38:19 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:59:36 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	key_release(int keycode, t_raycaster *ray_data)
 
 int	close_window(t_raycaster *ray_data)
 {
-	(void)ray_data;
-	return (0);
+	destroy_mlx(ray_data);
+	exit(0);
 }

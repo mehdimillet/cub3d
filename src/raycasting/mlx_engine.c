@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:08 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/16 14:38:13 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:59:33 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,60 @@
 #include "../headers/raycasting.h"
 #include "../minilibx-linux/mlx.h"
 
+//stock les valeurs de la mlx dans la structure ray_data
 int	init_mlx(t_raycaster *ray_data)
 {
-	(void)ray_data;
+	ray_data->mlx_ptr = mlx_init();
+	if (!ray_data->mlx_ptr)
+		return (1);
+	ray_data->win_ptr = mlx_new_window(
+			ray_data->mlx_ptr,
+			SCREEN_WIDTH,
+			SCREEN_HEIGHT,
+			"cub3D");
+	if (!ray_data->win_ptr)
+		return (1);
+	ray_data->img.img = mlx_new_image(
+			ray_data->mlx_ptr,
+			SCREEN_WIDTH,
+			SCREEN_HEIGHT);
+	if (!ray_data->img.img)
+		return (1);
+	ray_data->img.addr = mlx_get_data_addr(
+			ray_data->img.img,
+			&ray_data->img.bits_per_pixel,
+			&ray_data->img.line_length,
+			&ray_data->img.endian);
+	if (!ray_data->img.addr)
+		return (1);
 	return (0);
 }
 
+//ecrire le color dans l'adresse du buffer
 void	put_pixel(t_raycaster *ray_data, int x, int y, int color)
 {
-	(void)ray_data;
-	(void)x;
-	(void)y;
-	(void)color;
+	char	*dst;
+
+	if (x < 0 || x >= SCREEN_WIDTH
+		|| y < 0 || y >= SCREEN_HEIGHT)
+		return ;
+
+	dst = ray_data->img.addr + (y * ray_data->img.line_length
+			+ x * (ray_data->img.bits_per_pixel / 8));
+
+	*(unsigned int *)dst = color;
 }
 
+//detruire les valeurs de la struct qu'on a set dans init_mlx
 void	destroy_mlx(t_raycaster *ray_data)
 {
-	(void)ray_data;
+	if (ray_data->img.img)
+		mlx_destroy_image(ray_data->mlx_ptr, ray_data->img.img);
+	if (ray_data->win_ptr)
+		mlx_destroy_window(ray_data->mlx_ptr, ray_data->win_ptr);
+	if (ray_data->mlx_ptr)
+	{
+		mlx_destroy_display(ray_data->mlx_ptr);
+		free(ray_data->mlx_ptr);
+	}
 }
