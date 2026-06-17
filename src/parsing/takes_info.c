@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 16:44:54 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/17 05:10:54 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,6 @@ int	get_fd(char *file)
 	else
 		return (fd);
 }
-
-// void	check_file(char *line, t_cub *info, int i)
-// {
-// 	if (line[i] == "N" && line[i] + 1 == "O")
-// 	{
-
-// 	}
-// }
 
 char	**read_file(int fd, int nbline)
 {

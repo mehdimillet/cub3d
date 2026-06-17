@@ -4,14 +4,17 @@
 //color for the celling and the floor
 typedef struct s_color
 {
-    int red;
-    int green;
-    int blue;
+	int red;
+	int green;
+	int blue;
 }t_color;
 
 typedef struct s_texture
 {
-    void    *img;
+	char	*path;
+	void	*img;
+	int		length;
+	int		width;
 }t_texture;
 
 
@@ -19,14 +22,12 @@ typedef struct s_texture
 //tex[0] NO / tex[1] SO / tex[2] WE/ tex[3] EA
 typedef struct s_cub
 {
-    int         length;
-    int         width;
-    char        **map;
-    t_check     nodouble;
-    t_color     floor;
-    t_color     ceiling;
-    t_player    pos;
-    t_texture   tex[4];
+	char		**map;
+	int			seen[6];
+	t_color		floor;
+	t_color		ceiling;
+	t_player	pos;
+	t_texture	tex[4];
 }t_cub;
 
 #endif

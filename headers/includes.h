@@ -1,6 +1,9 @@
 #ifndef INCLUDES_H
 # define INCLUDES_H
 
+# include "enum.h"
+# include "player.h" 
+# include "map.h"
 # include "../libft/libft.h"
 # include "get_next_line.h"
 # include <math.h>
@@ -12,6 +15,7 @@
 # include <unistd.h>
 #include <fcntl.h>
 #include <stddef.h>
+#include <limits.h>
 // # include "minilibx-linux/mlx.h"
 
 //check_file.c
@@ -23,9 +27,21 @@ char	**read_file(int fd, int nbline);
 int	get_fd(char *file);
 
 //parsing.c
-int start(char **av);
+int start(char **av, t_cub *info);
+
+//parse_color.c
+int give_color(t_color *fc, char *line);
+int check_values(char **values);
+int check_point(char *line);
+int	choose_fc(t_cub *info, char *line);
+
+//parse_texture
+int	choose_texture(t_cub *info, char *line);
+void	stock_texture(t_texture tex, char *line);
 
 // tools.c
-int	ft_strcmp(char *s1, char *s2);
+long	my_atol(const char *nptr);
+int	    ft_strcmp(char *s1, char *s2);
+void	error_msg(char *msg);
 
-#endif 
+#endif
