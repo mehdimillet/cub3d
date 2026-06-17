@@ -6,14 +6,14 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:29 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/17 14:31:49 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/17 16:22:22 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/includes.h"
 
-// en gros c'est une fonction pour transformer le radian d'un cercle en un radian valide de 0-2pi(2pi = 360 degrees) zeubi
+// fonction pour transformer angle en radian valide de 0-2pi(2pi = 360 degrees)
 double	normalize_angle(double angle)
 {
 	angle = fmod(angle, 2 * PI);
@@ -21,9 +21,25 @@ double	normalize_angle(double angle)
 		angle += 2 * PI;
 	return (angle);
 }
+
+//regarde dans quelle direction le rayon allait, N, S, W, E.
 int get_wall_type(t_ray *ray)
 {
+	double	dir_x;
+	double	dir_y;
 	
+	dir_x = cos(ray->angle);
+	dir_y = sin(ray->angle);
+	
+	if (ray->hit_vertical == 0)
+	{
+		if (dir_x > 0)
+		return (EA);
+		return (WE);
+	}
+	if (dir_y > 0)
+	return (SO);
+	return (NO);
 }
 
 // fonction pour verif si c'est un mur ou pas(j'ai compte les bords de map comme des murs)
@@ -35,13 +51,14 @@ int	is_wall(t_cub *map, double x, double y)
 	grid_x = (int)floor(x);
 	grid_y = (int)floor(y);
 	if (grid_x < 0 || grid_y < 0 || grid_y >= map->height || grid_x >= map->width)
-		return (1);
+	return (1);
 	c = map->map[grid_y][grid_x];
 	if (c == '1')
-		return (1);
+	return (1);
 	return (0);
 }
 
+//envoie un rayon depuis le joueur dans une direction et calcule ou ca touche(coordonnees, distance, cote touch)
 int	cast_ray(t_raycaster *ray_data, double angle, t_ray *ray)
 {
 	(void)ray_data;
