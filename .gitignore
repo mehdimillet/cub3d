@@ -1,3 +1,5 @@
 .vscode
-.o
-.a
+*.o
+*.a
+minilibx-linux/*.o
+minilibx-linux/libmlx.a

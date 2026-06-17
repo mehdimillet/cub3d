@@ -6,6 +6,7 @@
 # include "map.h"
 # include "../libft/libft.h"
 # include "get_next_line.h"
+# include "raycasting.h"
 # include <math.h>
 # include <string.h>
 # include <stdlib.h>

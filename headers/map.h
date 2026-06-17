@@ -23,6 +23,8 @@ typedef struct s_texture
 typedef struct s_cub
 {
 	char		**map;
+	int			height; //j'ai ajoute ca j'en ai besoin pour le raycasting
+	int			width; //
 	int			seen[6];
 	t_color		floor;
 	t_color		ceiling;
