@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:29 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/17 14:24:08 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/17 14:31:49 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ double	normalize_angle(double angle)
 		angle += 2 * PI;
 	return (angle);
 }
-
-int	get_wall_type(t_raycaster *ray_data, double hit_x, double hit_y,
-		double angle)
+int get_wall_type(t_ray *ray)
 {
 	
 }

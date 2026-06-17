@@ -13,9 +13,13 @@ typedef struct s_texture
 {
 	char	*path;
 	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
 	int		length;
 	int		width;
-}t_texture;
+}	t_texture;
 
 
 //struct wich contains the infos of map
