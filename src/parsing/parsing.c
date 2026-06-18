@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 10:30:47 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:16:16 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,14 @@ int start(char **av, t_cub *info)
 		return (1);
 	fd = get_fd(av[1]);
 	len = count_line(fd);
+	info->nb_line = len;
 	close (fd);
 	fd = get_fd(av[1]);
 	file = read_file(fd, len);
 	close(fd);
 	if (info_distrib(file, info) != 0)
 		return (1);
+	file_to_map(file, info);
+	free_tab(file);
 	return(0);
 }

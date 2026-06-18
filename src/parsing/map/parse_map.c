@@ -1,25 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_struct.c                                      :+:      :+:    :+:   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/04 16:38:01 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 12:14:34 by memillet         ###   ########.fr       */
+/*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
+/*   Updated: 2026/06/18 11:26:55 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../../../headers/cub3d.h"
 
-void	init_cub(t_cub *info)
-{
-	info->height = -1;
-	info->width = -1;
-	info->map_start = -1;
-}
-
-// void    init_player()
-// {
-	
-// }

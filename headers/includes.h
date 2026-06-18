@@ -47,5 +47,7 @@ int	    ft_strcmp(char *s1, char *s2);
 void	error_msg(char *msg);
 int	is_blank_line(char *line);
 
+//build_map.c
+void	file_to_map(char **file, t_cub *info);
 
 #endif

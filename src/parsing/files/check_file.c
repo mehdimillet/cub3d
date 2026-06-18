@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 11:54:15 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 16:53:21 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 11:57:22 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../headers/cub3d.h"
+# include "../../../headers/cub3d.h"
 
 int	check_filename(char *map_name)
 {

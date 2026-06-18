@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/17 05:10:54 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:06:28 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "../../../headers/cub3d.h"
 
 int	get_fd(char *file)
 {
@@ -49,7 +49,6 @@ char	**read_file(int fd, int nbline)
 		free(line);
 		i++;
 	}
-	i++;
-	file[i + 1] = NULL;
+	file[i] = NULL;
 	return (close(fd), file);
 }
