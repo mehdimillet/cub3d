@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:29 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/17 16:22:22 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/18 14:58:54 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,6 @@ int	is_wall(t_cub *map, double x, double y)
 	return (0);
 }
 
-//envoie un rayon depuis le joueur dans une direction et calcule ou ca touche(coordonnees, distance, cote touch)
-int	cast_ray(t_raycaster *ray_data, double angle, t_ray *ray)
-{
-	(void)ray_data;
-	(void)angle;
-	(void)ray;
-	return (0);
-}
 
 int	raycasting_loop(t_raycaster *ray_data)
 {

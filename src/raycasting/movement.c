@@ -14,19 +14,57 @@
 #include "../headers/raycasting.h"
 #include <math.h>
 
-# define MOVE_SPEED 0.05
-# define ROTATE_SPEED 0.05
+# define MOVE_SPEED 3.0
+# define ROTATE_SPEED 2.0
 
+// retourne 1 si la case est accessible (pas un mur, pas hors map)
 int	is_walkable(t_cub *map, double x, double y)
 {
-	(void)map;
-	(void)x;
-	(void)y;
-	return (0);
+	int	gx;
+	int	gy;
+
+	gx = (int)floor(x);
+	gy = (int)floor(y);
+	if (gx < 0 || gy < 0 || gy >= map->height || gx >= map->width)
+		return (0);
+	return (map->map[gy][gx] == '0');
 }
 
-void	update_player(t_raycaster *ray_data, double delta_time)
+// deplace le joueur selon les touches WASD, bloque si mur
+static void	move_player(t_raycaster *rc, double dx, double dy)
 {
-	(void)ray_data;
-	(void)delta_time;
+	if (rc->key_w && is_walkable(rc->map, rc->player_x + dx, rc->player_y + dy))
+	{
+		rc->player_x += dx;
+		rc->player_y += dy;
+	}
+	if (rc->key_s && is_walkable(rc->map, rc->player_x - dx, rc->player_y - dy))
+	{
+		rc->player_x -= dx;
+		rc->player_y -= dy;
+	}
+	if (rc->key_a && is_walkable(rc->map, rc->player_x + dy, rc->player_y - dx))
+	{
+		rc->player_x += dy;
+		rc->player_y -= dx;
+	}
+	if (rc->key_d && is_walkable(rc->map, rc->player_x - dy, rc->player_y + dx))
+	{
+		rc->player_x -= dy;
+		rc->player_y += dx;
+	}
+}
+
+// applique deplacement et rotation selon les flags clavier
+void	update_player(t_raycaster *rc, double dt)
+{
+	double	speed;
+
+	speed = MOVE_SPEED * dt;
+	move_player(rc, cos(rc->player_angle) * speed, sin(rc->player_angle) * speed);
+	if (rc->key_left)
+		rc->player_angle -= ROTATE_SPEED * dt;
+	if (rc->key_right)
+		rc->player_angle += ROTATE_SPEED * dt;
+	rc->player_angle = normalize_angle(rc->player_angle);
 }

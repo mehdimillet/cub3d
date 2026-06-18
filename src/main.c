@@ -11,22 +11,18 @@
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
+#include "../headers/raycasting.h"
 
 // ./cub3d map.cub
 
 int main(int ac, char **av)
 {
-    t_cub   *info;
+    t_cub   info;
 
-    info = malloc(10000);
+    ft_memset(&info, 0, sizeof(t_cub));
     if (ac != 2)
         return (printf("Invalid Number of argument"), 1);
-    if (start(av, info) != 0)
+    if (start(av, &info) != 0)
         return (1);
-    free(info);
-    //init_struct
-    //parsing
-    //exec/raycasting
-    //free_all
-    return (0);
+    return (start_raycasting(&info));
 }

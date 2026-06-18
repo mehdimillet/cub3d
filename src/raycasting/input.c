@@ -14,17 +14,41 @@
 #include "../headers/raycasting.h"
 #include "../minilibx-linux/mlx.h"
 
+// active le flag de la touche pressee
 int	key_press(int keycode, t_raycaster *ray_data)
 {
-	(void)keycode;
-	(void)ray_data;
+	if (keycode == 119)
+		ray_data->key_w = 1;
+	if (keycode == 115)
+		ray_data->key_s = 1;
+	if (keycode == 97)
+		ray_data->key_a = 1;
+	if (keycode == 100)
+		ray_data->key_d = 1;
+	if (keycode == 65361)
+		ray_data->key_left = 1;
+	if (keycode == 65363)
+		ray_data->key_right = 1;
+	if (keycode == 65307)
+		close_window(ray_data);
 	return (0);
 }
 
+// desactive le flag de la touche relachee
 int	key_release(int keycode, t_raycaster *ray_data)
 {
-	(void)keycode;
-	(void)ray_data;
+	if (keycode == 119)
+		ray_data->key_w = 0;
+	if (keycode == 115)
+		ray_data->key_s = 0;
+	if (keycode == 97)
+		ray_data->key_a = 0;
+	if (keycode == 100)
+		ray_data->key_d = 0;
+	if (keycode == 65361)
+		ray_data->key_left = 0;
+	if (keycode == 65363)
+		ray_data->key_right = 0;
 	return (0);
 }
 

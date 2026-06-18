@@ -51,14 +51,38 @@ typedef struct s_raycaster
 	double	player_x;
 	double	player_y;
 	double	player_angle;
+	int		key_w;
+	int		key_s;
+	int		key_a;
+	int		key_d;
+	int		key_left;
+	int		key_right;
 }	t_raycaster;
+
+// toutes les variables intermediaires du DDA regroupees pour eviter trop de parametres
+typedef struct s_dda
+{
+	double	dir_x;        // composante X de la direction du rayon
+	double	dir_y;        // composante Y de la direction du rayon
+	double	delta_dist_x; // distance pour traverser une case entiere en X
+	double	delta_dist_y; // distance pour traverser une case entiere en Y
+	double	side_dist_x;  // distance jusqu'a la prochaine ligne verticale
+	double	side_dist_y;  // distance jusqu'a la prochaine ligne horizontale
+	int		map_x;        // case courante en X
+	int		map_y;        // case courante en Y
+	int		step_x;       // direction de deplacement en X (-1 ou +1)
+	int		step_y;       // direction de deplacement en Y (-1 ou +1)
+	int		side;         // 0 = mur touche via ligne verticale, 1 = horizontale
+}	t_dda;
 
 // raycasting_core.c
 double	normalize_angle(double angle);
 int		get_wall_type(t_ray *ray);
 int		is_wall(t_cub *map, double x, double y);
-int		cast_ray(t_raycaster *ray_data, double angle, t_ray *ray);
 int		raycasting_loop(t_raycaster *ray_data);
+
+// cast_ray.c
+int		cast_ray(t_raycaster *rc, double angle, t_ray *ray);
 
 // raycasting.c
 int		game_loop(t_raycaster *ray_data);

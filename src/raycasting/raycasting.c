@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/17 15:59:35 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/18 17:05:18 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,38 @@
 #include "../headers/raycasting.h"
 #include "../minilibx-linux/mlx.h"
 
+// calcule le temps ecoule depuis le dernier appel en secondes
+static double	get_delta_time(void)
+{
+	static struct timeval	last = {0, 0};
+	struct timeval			now;
+	double					dt;
+
+	gettimeofday(&now, NULL);
+	dt = (now.tv_sec - last.tv_sec) + (now.tv_usec - last.tv_usec) / 1e6;
+	last = now;
+	return (dt);
+}
+
+// boucle principale : met a jour le joueur, envoie un rayon par colonne et affiche
 int	game_loop(t_raycaster *ray_data)
 {
-	(void)ray_data;
+	t_ray	ray;
+	double	angle;
+	int		col;
+
+	update_player(ray_data, get_delta_time());
+	col = 0;
+	while (col < SCREEN_WIDTH)
+	{
+		angle = ray_data->player_angle
+			- (FOV / 2.0)
+			+ ((double)col * FOV / SCREEN_WIDTH);
+		cast_ray(ray_data, angle, &ray);
+		render_column(ray_data, col, &ray);
+		col++;
+	}
+	render_frame(ray_data);
 	return (0);
 }
 
