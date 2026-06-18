@@ -19,7 +19,7 @@ typedef struct s_texture
 	int		endian;
 	int		length;
 	int		width;
-}	t_texture;
+}t_texture;
 
 
 //struct wich contains the infos of map
@@ -29,6 +29,7 @@ typedef struct s_cub
 	char		**map;
 	int			height; //j'ai ajoute ca j'en ai besoin pour le raycasting
 	int			width; //
+	int			map_start;
 	int			seen[6];
 	t_color		floor;
 	t_color		ceiling;

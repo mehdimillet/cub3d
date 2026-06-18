@@ -6,11 +6,26 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/17 08:41:53 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:30:47 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../headers/cub3d.h"
+
+int	is_know(char *line)
+{
+	if (line[0] == 'N' && line[1] == 'O')
+		return (0);
+	else if (line[0] == 'S' && line[1] == 'O')
+		return(0);
+	else if (line[0] == 'W' && line[1] == 'E')
+		return (0);
+	else if (line[0] == 'E' && line[1] == 'A')
+		return (0);
+	else if (line[0] == 'F' || line[0] == 'C')
+		return (0);
+	return (1);
+}
 
 int	check_all_seen(t_cub *info)
 {
@@ -20,7 +35,7 @@ int	check_all_seen(t_cub *info)
 	while (i < 6)
 	{
 		if (info->seen[i] == 0)
-			return (error_msg("Error\nMissing element\n"), 1);
+			return (error_msg("Error\nMissing element or invalid element\n"), 1);
 		i++;
 	}
 	return (0);
@@ -29,16 +44,29 @@ int	check_all_seen(t_cub *info)
 int info_distrib(char **file, t_cub *info)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (file[i])
 	{
-		if (choose_texture(info, file[i]) != 0)
-			return (1);
-		i++;
+		if (is_blank_line(file[i]))
+		{
+			i++;
+			continue;
+		}
+		if (is_know(file[i]) == 0)
+		{
+			if (choose_texture(info, file[i]) != 0)
+				return (1);
+			i++;
+		}
+		else
+		{
+			if (check_all_seen(info) == 0)
+				return (info->map_start = i, 0);
+			return(1);
+		}
 	}
-	return (0);
+	return (error_msg(("Error\nNo map found\n")), 1);
 }
 
 int start(char **av, t_cub *info)
@@ -56,8 +84,6 @@ int start(char **av, t_cub *info)
 	file = read_file(fd, len);
 	close(fd);
 	if (info_distrib(file, info) != 0)
-		return (1);
-	if (check_all_seen(info) != 0)
 		return (1);
 	return(0);
 }

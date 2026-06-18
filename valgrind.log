@@ -1,0 +1,372 @@
+==2671282== Memcheck, a memory error detector
+==2671282== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2671282== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2671282== Command: ./test_distrib
+==2671282== 
+Error
+Duplicate NO
+Error
+Duplicate F
+Error
+Missing element or invalid element
+Error
+Missing element or invalid element
+Error
+Missing element or invalid element
+Error
+Missing element or invalid element
+Error
+No map found
+Error
+No map found
+Error
+No map found
+Error
+Missing element or invalid element
+==2671282== 
+==2671282== HEAP SUMMARY:
+==2671282==     in use at exit: 310 bytes in 37 blocks
+==2671282==   total heap usage: 220 allocs, 183 frees, 6,807 bytes allocated
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 1 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40122B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 2 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40122B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 3 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40122B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 4 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40122B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 5 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401263: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 6 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401263: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 7 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401263: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 8 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401263: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 9 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40129B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 10 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40129B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 11 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40129B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 12 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40129B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 13 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4012D3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 14 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4012D3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 15 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4012D3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 16 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4012D3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 17 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40130B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 18 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40130B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 19 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40130B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 20 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40130B: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 21 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401346: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 22 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401381: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 23 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401381: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 24 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4013BC: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 25 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4013BC: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 26 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4013BC: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 27 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4013BC: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 28 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401409: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 29 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4014B2: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 30 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4015DA: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 31 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4015DA: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 32 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4015DA: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 8 bytes in 1 blocks are definitely lost in loss record 33 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4015DA: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 11 bytes in 1 blocks are definitely lost in loss record 34 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4021F9: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4011F3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 11 bytes in 1 blocks are definitely lost in loss record 35 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40228D: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4011F3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 12 bytes in 1 blocks are definitely lost in loss record 36 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4020D7: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4011F3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== 12 bytes in 1 blocks are definitely lost in loss record 37 of 37
+==2671282==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2671282==    by 0x40342B: ft_strdup (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x40235A: stock_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x402168: choose_texture (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401A70: info_distrib (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x401696: test (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282==    by 0x4011F3: main (in /home/memillet/Documents/cub3d/test_distrib)
+==2671282== 
+==2671282== LEAK SUMMARY:
+==2671282==    definitely lost: 310 bytes in 37 blocks
+==2671282==    indirectly lost: 0 bytes in 0 blocks
+==2671282==      possibly lost: 0 bytes in 0 blocks
+==2671282==    still reachable: 0 bytes in 0 blocks
+==2671282==         suppressed: 0 bytes in 0 blocks
+==2671282== 
+==2671282== For lists of detected and suppressed errors, rerun with: -s
+==2671282== ERROR SUMMARY: 37 errors from 37 contexts (suppressed: 0 from 0)

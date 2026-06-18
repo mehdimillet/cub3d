@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 05:11:16 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/17 09:29:02 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:28:49 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,21 @@ int	choose_fc(t_cub *info, char *line)
 {
 	if (line[0] == 'F' && (line[1] == ' ' || line[1] == '\t'))
 	{
+		if (info->seen[F] == 1)
+			return (error_msg("Error\nDuplicate F\n"), 1);
 		info->seen[F] = 1;
 		if (give_color(&info->floor, line) != 0)
 			return (1);
 	}
 	else if (line[0] == 'C' && (line[1] == ' ' || line[1] == '\t'))
 	{
+		if (info->seen[C] == 1)
+			return (error_msg("Error\nDuplicate C\n"), 1);
 		info->seen[C] = 1;
 		if (give_color(&info->ceiling, line) != 0)
 			return (1);
 	}
+	return (0);
 }
 
 int check_point(char *line)

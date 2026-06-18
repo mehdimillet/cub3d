@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:49:25 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/17 06:35:35 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 08:27:49 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,21 @@ long	my_atol(const char *nptr)
 void	error_msg(char *msg)
 {
 	ft_putstr_fd(msg, STDERR_FILENO);
+}
+
+int	is_blank_line(char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == '\t' || line[i] == ' ' || line[i] == '\n')
+			i++;
+		else
+			break;
+	}
+	if (line[i] == '\0')
+		return (1);
+	return (0);
 }

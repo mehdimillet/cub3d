@@ -29,6 +29,7 @@ int	get_fd(char *file);
 
 //parsing.c
 int start(char **av, t_cub *info);
+int info_distrib(char **file, t_cub *info);
 
 //parse_color.c
 int give_color(t_color *fc, char *line);
@@ -38,11 +39,13 @@ int	choose_fc(t_cub *info, char *line);
 
 //parse_texture
 int	choose_texture(t_cub *info, char *line);
-void	stock_texture(t_texture tex, char *line);
+void	stock_texture(t_texture *tex, char *line);
 
 // tools.c
 long	my_atol(const char *nptr);
 int	    ft_strcmp(char *s1, char *s2);
 void	error_msg(char *msg);
+int	is_blank_line(char *line);
+
 
 #endif

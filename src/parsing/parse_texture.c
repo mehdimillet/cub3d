@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 07:17:39 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/17 09:31:43 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:26:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	choose_texture(t_cub *info, char *line)
 		if (choose_fc(info, line) != 0)
 			return (1);
 	}
+	return (0);
 }
 
 void	stock_texture(t_texture *tex, char *line)
