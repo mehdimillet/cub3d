@@ -89,7 +89,6 @@ int		game_loop(t_raycaster *ray_data);
 int		start_raycasting(t_cub *map);
 
 // renderer.c
-int		get_color_from_wall(int wall_type);
 void	render_column(t_raycaster *ray_data, int col, t_ray *ray);
 void	render_frame(t_raycaster *ray_data);
 

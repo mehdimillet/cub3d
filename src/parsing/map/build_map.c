@@ -32,10 +32,14 @@ void	file_to_map(char **file, t_cub *info)
 		i++;
 		j++;
     }
+	info->map[j] = NULL;
 	info->height = j;
-	for (int i = 0; info->map[i]; i++)
-		printf("%s\n", info->map[i]);
-	printf("trop fort\n");
-	free_tab(info->map);
+	j = 0;
+	while (info->map[j])
+	{
+		if ((int)ft_strlen(info->map[j]) > info->width)
+			info->width = ft_strlen(info->map[j]);
+		j++;
+	}
 }
 

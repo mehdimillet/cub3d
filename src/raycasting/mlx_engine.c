@@ -14,6 +14,32 @@
 #include "../headers/raycasting.h"
 #include "../minilibx-linux/mlx.h"
 
+static int	load_textures(t_raycaster *ray_data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		ray_data->map->tex[i].img = mlx_xpm_file_to_image(
+				ray_data->mlx_ptr,
+				ray_data->map->tex[i].path,
+				&ray_data->map->tex[i].width,
+				&ray_data->map->tex[i].length);
+		if (!ray_data->map->tex[i].img)
+			return (1);
+		ray_data->map->tex[i].addr = mlx_get_data_addr(
+				ray_data->map->tex[i].img,
+				&ray_data->map->tex[i].bits_per_pixel,
+				&ray_data->map->tex[i].line_length,
+				&ray_data->map->tex[i].endian);
+		if (!ray_data->map->tex[i].addr)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 //stock les valeurs de la mlx dans la structure ray_data
 int	init_mlx(t_raycaster *ray_data)
 {
@@ -39,6 +65,8 @@ int	init_mlx(t_raycaster *ray_data)
 			&ray_data->img.line_length,
 			&ray_data->img.endian);
 	if (!ray_data->img.addr)
+		return (1);
+	if (load_textures(ray_data))
 		return (1);
 	return (0);
 }
