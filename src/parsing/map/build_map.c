@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:27:10 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 12:23:51 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:10:55 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ void	file_to_map(char **file, t_cub *info)
 {
     int	i;
 	int	j;
-	int	len;
 
 	i = info->map_start;
 	j = 0;
-	len = info->nb_line - i;
-	info->map = malloc(sizeof(char *) * (len + 1));
+	info->map = malloc(sizeof(char *) * (info->nb_line - i + 1));
 	if (!info->map)
 		return ;
     while (file[i])
@@ -43,3 +41,22 @@ void	file_to_map(char **file, t_cub *info)
 	}
 }
 
+char	**ft_map_duplicate(t_cub *info)
+{
+	char	**new;
+	int		i;
+
+	i = 0;
+	new = malloc(sizeof(char *) * (info->nb_line - info->map_start + 1));
+	if (!new)
+		return (NULL);
+	while(info->map[i])
+	{
+		new[i] = ft_strdup(info->map[i]);
+		if (!new[i])
+			return (free_tab(new), NULL);
+		i++;
+	}
+	new[i] = NULL;
+	return (new);
+}

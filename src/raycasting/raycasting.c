@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/18 17:05:18 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/22 11:43:02 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
-#include "../minilibx-linux/mlx.h"
+#include "../../minilibx-linux/mlx.h"
 
 // calcule le temps ecoule depuis le dernier appel en secondes
 static double	get_delta_time(void)

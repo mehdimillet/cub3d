@@ -27,6 +27,7 @@ typedef struct s_texture
 typedef struct s_cub
 {
 	char		**map;
+	int			leak;
 	int			nb_line;
 	int			height; //j'ai ajoute ca j'en ai besoin pour le raycasting
 	int			width; //

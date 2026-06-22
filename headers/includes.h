@@ -50,4 +50,8 @@ int	is_blank_line(char *line);
 //build_map.c
 void	file_to_map(char **file, t_cub *info);
 
+//parse_map.c
+char	**ft_map_duplicate(t_cub *info);
+
+
 #endif

@@ -6,9 +6,75 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 11:26:55 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/22 16:31:21 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
+void	is_player(t_cub *info, char c, int x, int y)
+{
+	info->pos.player_count++;
+	info->pos.line = y + 0.5;
+	info->pos.orientation = info->map[x][y];
+	info->pos.column = x + 0.5;
+}
+
+int	check_charset_and_player(t_cub *info)
+{
+	int 		y;
+	int 		x;
+	const char	*allowed;
+
+	allowed = "01NSEW ";
+	y = 0;
+	while (info->map[y])
+	{
+		x = 0;
+		while (info->map[y][x])
+		{
+			if (!ft_strchr(allowed, info->map[y][x]))
+				return (error_msg("Error\nInvalid char in map\n"), 1);
+			if (ft_strchr("NSEW", info->map[y][x]))
+				is_player(info, info->map[y][x], x, y);
+			if (info->pos.player_count != 1)
+				return(error_msg("Error\nMust have exactly one player\n"), 1);
+			x++;
+		}
+		y++;
+	}
+	return (0);
+}
+
+
+void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
+{
+	if (y < 0 || y >= info->height || x < 0 || map_cpy[y][x] == '\0' ||
+		map_cpy[y][x] == ' ')
+		return (info->leak = 1, (void)0);
+	if (map_cpy[y][x] == 'V' || map_cpy[y][x] == '1')
+		return ;
+	else
+		map_cpy[y][x] = 'V';
+	flood_fill(map_cpy, y, x + 1, info);
+	flood_fill(map_cpy, y, x - 1, info);
+	flood_fill(map_cpy, y + 1, x, info);
+	flood_fill(map_cpy, y - 1, x, info);
+}
+
+int	check_map_closed(t_cub *info)
+{
+	char **copy;
+	
+	copy = ft_map_duplicate(info->map);
+	if (!copy)
+		return (1);
+	info->leak = 0;
+	flood_fill(copy, (int)info->pos.line, (int)info->pos.column, info);
+	if (check_flood_fill(copy) != 0)
+		return (free_tab(info->map), free_tab(copy), 1);
+	free_tab(copy);
+	if (info->leak)
+		return (error_msg("Error\nMap is not closed\n"), 1);
+	return (0);
+}
