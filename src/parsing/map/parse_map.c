@@ -6,17 +6,17 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/22 16:31:21 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 14:58:53 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	is_player(t_cub *info, char c, int x, int y)
+void	is_player(t_cub *info, int x, int y)
 {
 	info->pos.player_count++;
 	info->pos.line = y + 0.5;
-	info->pos.orientation = info->map[x][y];
+	info->pos.orientation = info->map[y][x];
 	info->pos.column = x + 0.5;
 }
 
@@ -36,13 +36,13 @@ int	check_charset_and_player(t_cub *info)
 			if (!ft_strchr(allowed, info->map[y][x]))
 				return (error_msg("Error\nInvalid char in map\n"), 1);
 			if (ft_strchr("NSEW", info->map[y][x]))
-				is_player(info, info->map[y][x], x, y);
-			if (info->pos.player_count != 1)
-				return(error_msg("Error\nMust have exactly one player\n"), 1);
+				is_player(info, x, y);
 			x++;
 		}
 		y++;
 	}
+	if (info->pos.player_count != 1)
+		return(error_msg("Error\nMust have exactly one player\n"), 1);
 	return (0);
 }
 
@@ -51,7 +51,10 @@ void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
 {
 	if (y < 0 || y >= info->height || x < 0 || map_cpy[y][x] == '\0' ||
 		map_cpy[y][x] == ' ')
-		return (info->leak = 1, (void)0);
+	{
+		info->leak = 1;
+		return ;
+	}
 	if (map_cpy[y][x] == 'V' || map_cpy[y][x] == '1')
 		return ;
 	else
@@ -66,13 +69,11 @@ int	check_map_closed(t_cub *info)
 {
 	char **copy;
 	
-	copy = ft_map_duplicate(info->map);
+	copy = ft_map_duplicate(info);
 	if (!copy)
 		return (1);
 	info->leak = 0;
 	flood_fill(copy, (int)info->pos.line, (int)info->pos.column, info);
-	if (check_flood_fill(copy) != 0)
-		return (free_tab(info->map), free_tab(copy), 1);
 	free_tab(copy);
 	if (info->leak)
 		return (error_msg("Error\nMap is not closed\n"), 1);

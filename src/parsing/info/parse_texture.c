@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 07:17:39 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 10:26:23 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:05:52 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "headers/cub3d.h"
 
 int	choose_texture(t_cub *info, char *line)
 {

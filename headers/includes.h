@@ -28,7 +28,7 @@ char	**read_file(int fd, int nbline);
 int	get_fd(char *file);
 
 //parsing.c
-int start(char **av, t_cub *info);
+int parse_the_world(char **av, t_cub *info); //name by nclave
 int info_distrib(char **file, t_cub *info);
 
 //parse_color.c
@@ -46,12 +46,17 @@ long	my_atol(const char *nptr);
 int	    ft_strcmp(char *s1, char *s2);
 void	error_msg(char *msg);
 int	is_blank_line(char *line);
+void free_cub(t_cub *info);
 
 //build_map.c
 void	file_to_map(char **file, t_cub *info);
 
 //parse_map.c
 char	**ft_map_duplicate(t_cub *info);
+int	check_charset_and_player(t_cub *info);
+int	check_map_closed(t_cub *info);
 
+//init_struct.c
+void    init_player(t_player *j);
 
 #endif

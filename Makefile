@@ -1,7 +1,7 @@
 NAME = cub3D
  
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -I.
 RM = rm -f
  
 SRC_DIR = src
@@ -9,12 +9,13 @@ MLX_DIR = minilibx-linux
  
 SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parsing/parsing.c \
-			$(SRC_DIR)/parsing/parse_color.c \
-			$(SRC_DIR)/parsing/parse_texture.c \
 			$(SRC_DIR)/parsing/tools.c \
+			$(SRC_DIR)/parsing/info/parse_color.c \
+			$(SRC_DIR)/parsing/info/parse_texture.c \
 			$(SRC_DIR)/parsing/files/check_file.c \
 			$(SRC_DIR)/parsing/files/takes_info.c \
 			$(SRC_DIR)/parsing/map/build_map.c \
+			$(SRC_DIR)/parsing/map/parse_map.c \
 			$(SRC_DIR)/gnl/get_next_line.c \
 			$(SRC_DIR)/gnl/get_next_line_utils.c \
 			$(SRC_DIR)/raycasting/raycasting_core.c \
@@ -24,6 +25,7 @@ SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/raycasting/renderer.c \
 			$(SRC_DIR)/raycasting/input.c \
 			$(SRC_DIR)/raycasting/movement.c
+# 			$(SRC_DIR)/parsing/init_struct.c \
  
 OBJECTS = $(SOURCES:.c=.o)
  

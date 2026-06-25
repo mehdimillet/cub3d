@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 16:38:01 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 12:14:34 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:06:19 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "headers/cub3d.h"
 
 void	init_cub(t_cub *info)
 {
@@ -19,7 +19,9 @@ void	init_cub(t_cub *info)
 	info->map_start = -1;
 }
 
-// void    init_player()
-// {
-	
-// }
+void    init_player(t_player *j)
+{
+	j->column = 0;
+	j->line = 0;
+	j->player_count = 0;
+}

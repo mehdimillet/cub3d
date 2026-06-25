@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 12:06:28 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:06:06 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "headers/cub3d.h"
 
 int	get_fd(char *file)
 {

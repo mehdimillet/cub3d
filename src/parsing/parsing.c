@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/18 12:16:16 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:49:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../headers/cub3d.h"
+#include "headers/cub3d.h"
 
 int	is_know(char *line)
 {
@@ -69,7 +69,7 @@ int info_distrib(char **file, t_cub *info)
 	return (error_msg(("Error\nNo map found\n")), 1);
 }
 
-int start(char **av, t_cub *info)
+int parse_the_world(char **av, t_cub *info)
 {
 	int		fd;
 	int		len;
@@ -85,8 +85,12 @@ int start(char **av, t_cub *info)
 	file = read_file(fd, len);
 	close(fd);
 	if (info_distrib(file, info) != 0)
-		return (1);
+		return (free_cub(info), 1);
 	file_to_map(file, info);
+	if (check_charset_and_player(info) != 0)
+		return (free_tab(file),free_cub(info), 1);
+	if (check_map_closed(info) != 0)
+		return (free_tab(file), free_cub(info), 1);
 	free_tab(file);
 	return(0);
 }
