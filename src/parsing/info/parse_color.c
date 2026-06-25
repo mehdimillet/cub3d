@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 05:11:16 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:05:38 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:05:43 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	choose_fc(t_cub *info, char *line)
 	return (0);
 }
 
-int check_point(char *line)
+int	check_point(char *line)
 {
 	int	i;
 	int	j;
@@ -41,7 +41,7 @@ int check_point(char *line)
 	i = 0;
 	j = 0;
 	if (line[0] == ',' || line[ft_strlen(line) - 1] == ',')
-		return (error_msg("Error\nComma at the beginning or end of the string\n"), 1);
+		return (error_msg("Error\nComma at start or end of the string\n"), 1);
 	while (line[i])
 	{
 		if (line[i] == ',')
@@ -57,7 +57,7 @@ int check_point(char *line)
 	return (0);
 }
 
-int check_values(char **values)
+int	check_values(char **values)
 {
 	int	i;
 	int	j;
@@ -78,22 +78,9 @@ int check_values(char **values)
 	}
 	return (0);
 }
-/*
-	entre F et 0,252,224 au mois un espace mais peut en avoir plus
-	entre les virgules espace tolere ex: 0,    255,  2
-	espace en fin de ligne tolerer mais si caractere avat la fin de ligne erreur
-	ex: F 0,252,224          4      : = erreur
-	
 
-	dnas les valeurs :
-	 - entre 0 et 255
-	 - il faut bien 3 valeurs
-	 - pas de champ vide
-	 - fuat pas commencer par une virgule ni finir
-	 -faire gaffe au overflow
-*/
 //start i at 1 because line[0] = F or C
-int give_color(t_color *fc, char *line)
+int	give_color(t_color *fc, char *line)
 {
 	int		i;
 	char	**values;
@@ -114,4 +101,3 @@ int give_color(t_color *fc, char *line)
 	free_tab(values);
 	return (0);
 }
-

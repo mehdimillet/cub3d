@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:49:25 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:20:37 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:04:09 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ long	my_atol(const char *nptr)
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-        if (i > 3)
-            return (-1);
+		if (i > 3)
+			return (-1);
 		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
@@ -57,32 +57,32 @@ int	is_blank_line(char *line)
 		if (line[i] == '\t' || line[i] == ' ' || line[i] == '\n')
 			i++;
 		else
-			break;
+			break ;
 	}
 	if (line[i] == '\0')
 		return (1);
 	return (0);
 }
 
-void free_cub(t_cub *info)
+void	free_cub(t_cub *info)
 {
-    int i;
+	int	i;
 
-    if (!info)
-        return ;
-    i = 0;
-    while (i < 4)
-    {
-        if (info->tex[i].path)
-        {
-            free(info->tex[i].path);
-            info->tex[i].path = NULL;
-        }
-        i++;
-    }
-    if (info->map)
-    {
-        free_tab(info->map);
-        info->map = NULL;
-    }
+	if (!info)
+		return ;
+	i = 0;
+	while (i < 4)
+	{
+		if (info->tex[i].path)
+		{
+			free(info->tex[i].path);
+			info->tex[i].path = NULL;
+		}
+		i++;
+	}
+	if (info->map)
+	{
+		free_tab(info->map);
+		info->map = NULL;
+	}
 }

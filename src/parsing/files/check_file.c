@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 11:54:15 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:06:07 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:05:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	count_line(int fd)
 	int		i;
 
 	i = 0;
-	while((line = get_next_line(fd)))
+	while ((line = get_next_line(fd)))
 	{
 		i++;
 		free(line);
 	}
-	close(fd);
-	return(i);
+	close (fd);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 14:58:53 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:03:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,19 @@ void	is_player(t_cub *info, int x, int y)
 {
 	info->pos.player_count++;
 	info->pos.line = y + 0.5;
-	info->pos.orientation = info->map[y][x];
 	info->pos.column = x + 0.5;
+	info->pos.orientation = info->map[y][x];
+	// if (info->map[y][x] == 'N')
+	// 	info->pos.orientation = 0;
+	// if (info->map[y][x] == 'S')
+	// 	info->pos.orientation = 180
+	
 }
 
 int	check_charset_and_player(t_cub *info)
 {
-	int 		y;
-	int 		x;
+	int			y;
+	int			x;
 	const char	*allowed;
 
 	allowed = "01NSEW ";
@@ -42,10 +47,9 @@ int	check_charset_and_player(t_cub *info)
 		y++;
 	}
 	if (info->pos.player_count != 1)
-		return(error_msg("Error\nMust have exactly one player\n"), 1);
+		return (error_msg("Error\nMust have exactly one player\n"), 1);
 	return (0);
 }
-
 
 void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
 {
@@ -67,8 +71,8 @@ void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
 
 int	check_map_closed(t_cub *info)
 {
-	char **copy;
-	
+	char	**copy;
+
 	copy = ft_map_duplicate(info);
 	if (!copy)
 		return (1);

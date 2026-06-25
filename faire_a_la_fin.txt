@@ -1,9 +1,0 @@
-Un makefile propre
-
-des headers vrm propre
-
-trouver comment dans les .c je peux mettre uniquement include "cub3d.h"
-et pas tout le chemain
-
-quand je vais tout free fuat que je pense a :
-- tex->path

@@ -1,0 +1,19 @@
+- convertir le char orientation en radiant
+
+- cleanup complet apres la mlx
+
+- tester les chemain d'erreur mlx si ca ne marche pas faut free les images
+car la ca return juste 1
+
+- verifier que les textures .xpm sont lisible et existent
+
+- is walkable a fixer car collisions trop stricte ca teste == '0'
+donc impossible de marcher sur sa propre case et doit inclure NSEW comme marchable
+
+- le hook ESC appelle close window qui appelle exit le t_cub sans rien free
+
+- faire la map
+
+- regarder si on veut les bonus
+
+- readme

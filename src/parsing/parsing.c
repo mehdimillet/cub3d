@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:49:23 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:03:20 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_know(char *line)
 	if (line[0] == 'N' && line[1] == 'O')
 		return (0);
 	else if (line[0] == 'S' && line[1] == 'O')
-		return(0);
+		return (0);
 	else if (line[0] == 'W' && line[1] == 'E')
 		return (0);
 	else if (line[0] == 'E' && line[1] == 'A')
@@ -35,13 +35,14 @@ int	check_all_seen(t_cub *info)
 	while (i < 6)
 	{
 		if (info->seen[i] == 0)
-			return (error_msg("Error\nMissing element or invalid element\n"), 1);
+			return (error_msg("Error\nMissing element or invalid element\n")
+				, 1);
 		i++;
 	}
 	return (0);
 }
 
-int info_distrib(char **file, t_cub *info)
+int	info_distrib(char **file, t_cub *info)
 {
 	int	i;
 
@@ -51,7 +52,7 @@ int info_distrib(char **file, t_cub *info)
 		if (is_blank_line(file[i]))
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		if (is_know(file[i]) == 0)
 		{
@@ -63,13 +64,13 @@ int info_distrib(char **file, t_cub *info)
 		{
 			if (check_all_seen(info) == 0)
 				return (info->map_start = i, 0);
-			return(1);
+			return (1);
 		}
 	}
 	return (error_msg(("Error\nNo map found\n")), 1);
 }
 
-int parse_the_world(char **av, t_cub *info)
+int	parse_the_world(char **av, t_cub *info)
 {
 	int		fd;
 	int		len;
@@ -88,9 +89,9 @@ int parse_the_world(char **av, t_cub *info)
 		return (free_cub(info), 1);
 	file_to_map(file, info);
 	if (check_charset_and_player(info) != 0)
-		return (free_tab(file),free_cub(info), 1);
+		return (free_tab(file), free_cub(info), 1);
 	if (check_map_closed(info) != 0)
 		return (free_tab(file), free_cub(info), 1);
 	free_tab(file);
-	return(0);
+	return (0);
 }

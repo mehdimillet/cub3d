@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 22:38:10 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 17:03:53 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:57:02 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@
 // # include "../../libft.h"
 
 char	*get_next_line(int fd);
-int	my_strlen(const char *str);
+int		my_strlen(const char *str);
 
 #endif
