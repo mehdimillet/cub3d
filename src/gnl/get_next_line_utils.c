@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:22:49 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/15 17:03:19 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:28:36 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ int	my_strlen(const char *str)
 
 	i = 0;
 	while (str[i] != '\0')
-	i++;
+		i++;
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)//trouver le premioer \n
+char	*ft_strchr(const char *s, int c)
 {
 	unsigned char	a;
 
-	a = (unsigned char )c;
+	a = (unsigned char)c;
 	while (*s)
 	{
 		if (*s == a)
@@ -64,8 +64,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	size = (my_strlen(s1) + my_strlen (s2));
-	dest = my_calloc (size + 1, sizeof (char));
+	size = (my_strlen(s1) + my_strlen(s2));
+	dest = my_calloc(size + 1, sizeof(char));
 	if (!dest)
 		return (NULL);
 	while (*(s1 + i))
@@ -90,9 +90,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	if (!s)
-		return(NULL);
+		return (NULL);
 	if (start >= (unsigned int)my_strlen(s))
-	{	
+	{
 		dest = malloc(1);
 		if (!dest)
 			return (NULL);

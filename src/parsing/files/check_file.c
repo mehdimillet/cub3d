@@ -28,11 +28,12 @@ int	count_line(int fd)
 	int		i;
 
 	i = 0;
-	while ((line = get_next_line(fd)))
+	line = get_next_line(fd);
+	while (line)
 	{
 		i++;
 		free(line);
+		line = get_next_line(fd);
 	}
-	close (fd);
 	return (i);
 }

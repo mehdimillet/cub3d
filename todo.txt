@@ -1,19 +1,21 @@
-- convertir le char orientation en radiant
+- convertir le char orientation en radian (N/S/E/W -> angle)
 
-- cleanup complet apres la mlx
+- is_walkable fixé (inclut NSEW comme marchable)
 
-- tester les chemain d'erreur mlx si ca ne marche pas faut free les images
-car la ca return juste 1
+- le hook ESC free tout avant exit
 
-- verifier que les textures .xpm sont lisible et existent
+- cleanup complet des textures mlx (load_textures + destroy_mlx)
 
-- is walkable a fixer car collisions trop stricte ca teste == '0'
-donc impossible de marcher sur sa propre case et doit inclure NSEW comme marchable
+- leak parsing: file non freed quand info_distrib echoue
 
-- le hook ESC appelle close window qui appelle exit le t_cub sans rien free
+- double close sur le fd dans count_line
 
-- faire la map
+- invalid read dans flood_fill (x >= strlen non vérifié)
 
-- regarder si on veut les bonus
+- delta time fixé (premier frame dt=0, clamp à 50ms)
+
+- valgrind 0 erreurs sur tous les cas d'erreur de parsing
 
 - readme
+
+- regarder si on veut les bonus

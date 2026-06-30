@@ -86,7 +86,7 @@ int	parse_the_world(char **av, t_cub *info)
 	file = read_file(fd, len);
 	close(fd);
 	if (info_distrib(file, info) != 0)
-		return (free_cub(info), 1);
+		return (free_tab(file), free_cub(info), 1);
 	file_to_map(file, info);
 	if (check_charset_and_player(info) != 0)
 		return (free_tab(file), free_cub(info), 1);

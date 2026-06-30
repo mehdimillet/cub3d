@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:29 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 16:59:04 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:28:23 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ typedef struct s_player
 	double	column;
 	double	orientation;
 	int		player_count;
-}	t_player;
+}			t_player;
 
 #endif

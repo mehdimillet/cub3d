@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 16:38:01 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:06:19 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:31:54 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_cub(t_cub *info)
 	info->map_start = -1;
 }
 
-void    init_player(t_player *j)
+void	init_player(t_player *j)
 {
 	j->column = 0;
 	j->line = 0;

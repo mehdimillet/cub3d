@@ -55,5 +55,6 @@ int	key_release(int keycode, t_raycaster *ray_data)
 int	close_window(t_raycaster *ray_data)
 {
 	destroy_mlx(ray_data);
+	free_cub(ray_data->map);
 	exit(0);
 }

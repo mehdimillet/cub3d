@@ -12,17 +12,23 @@
 
 #include "../../../headers/cub3d.h"
 
+static double	char_to_angle(char c)
+{
+	if (c == 'N')
+		return (3.0 * PI / 2.0);
+	if (c == 'S')
+		return (PI / 2.0);
+	if (c == 'E')
+		return (0.0);
+	return (PI);
+}
+
 void	is_player(t_cub *info, int x, int y)
 {
 	info->pos.player_count++;
 	info->pos.line = y + 0.5;
 	info->pos.column = x + 0.5;
-	info->pos.orientation = info->map[y][x];
-	// if (info->map[y][x] == 'N')
-	// 	info->pos.orientation = 0;
-	// if (info->map[y][x] == 'S')
-	// 	info->pos.orientation = 180
-	
+	info->pos.orientation = char_to_angle(info->map[y][x]);
 }
 
 int	check_charset_and_player(t_cub *info)
@@ -53,8 +59,9 @@ int	check_charset_and_player(t_cub *info)
 
 void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
 {
-	if (y < 0 || y >= info->height || x < 0 || map_cpy[y][x] == '\0' ||
-		map_cpy[y][x] == ' ')
+	if (y < 0 || y >= info->height || x < 0
+		|| x >= (int)ft_strlen(map_cpy[y])
+		|| map_cpy[y][x] == '\0' || map_cpy[y][x] == ' ')
 	{
 		info->leak = 1;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:41 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/18 16:37:43 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:29:41 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 #include "../headers/raycasting.h"
 #include "../minilibx-linux/mlx.h"
 
-// convertit une t_color (r,g,b) en entier RGB utilisable par put_pixel
 static int	color_to_int(t_color c)
 {
 	return (c.red << 16 | c.green << 8 | c.blue);
 }
 
-// lit un pixel dans une texture a la position (tx, ty)
 static int	get_tex_pixel(t_texture *tex, int tx, int ty)
 {
 	char	*dst;
@@ -31,20 +29,11 @@ static int	get_tex_pixel(t_texture *tex, int tx, int ty)
 	return (*(unsigned int *)dst);
 }
 
-// dessine les pixels de la colonne : plafond, mur texturé, sol
-static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start, int end)
+static int	get_tex_x(t_ray *ray, t_texture *tex)
 {
-	t_texture	*tex;
-	int			wall_height;
-	int			tex_x;
-	int			tex_y;
-	double		wall_x;
-	int			y;
+	double	wall_x;
+	int		tex_x;
 
-	tex = &rc->map->tex[ray->wall_type];
-	wall_height = end - start;
-	if (wall_height <= 0)
-		wall_height = 1;
 	if (ray->hit_vertical)
 		wall_x = ray->hit_x - floor(ray->hit_x);
 	else
@@ -54,19 +43,35 @@ static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start, int end
 		tex_x = tex->width - 1 - tex_x;
 	else if (!ray->hit_vertical && (int)floor(ray->hit_y) % 2 == 0)
 		tex_x = tex->width - 1 - tex_x;
+	return (tex_x);
+}
+
+static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start,
+		int end)
+{
+	t_texture	*tex;
+	int			wall_height;
+	int			tex_x;
+	int			y;
+
+	tex = &rc->map->tex[ray->wall_type];
+	wall_height = end - start;
+	if (wall_height <= 0)
+		wall_height = 1;
+	tex_x = get_tex_x(ray, tex);
 	y = 0;
 	while (y < start)
 		put_pixel(rc, col, y++, color_to_int(rc->map->ceiling));
 	while (y <= end)
 	{
-		tex_y = ((y - start) * tex->length) / wall_height;
-		put_pixel(rc, col, y++, get_tex_pixel(tex, tex_x, tex_y));
+		put_pixel(rc, col, y, get_tex_pixel(tex, tex_x,
+				((y - start) * tex->length) / wall_height));
+		y++;
 	}
 	while (y < SCREEN_HEIGHT)
 		put_pixel(rc, col, y++, color_to_int(rc->map->floor));
 }
 
-// calcule les bornes du mur et delegue le dessin a draw_column
 void	render_column(t_raycaster *ray_data, int col, t_ray *ray)
 {
 	int	wall_height;
@@ -83,10 +88,8 @@ void	render_column(t_raycaster *ray_data, int col, t_ray *ray)
 	draw_column(ray_data, col, ray, wall_start, wall_end);
 }
 
-// affiche le buffer image dans la fenetre
 void	render_frame(t_raycaster *ray_data)
 {
-	mlx_put_image_to_window(ray_data->mlx_ptr,
-		ray_data->win_ptr,
+	mlx_put_image_to_window(ray_data->mlx_ptr, ray_data->win_ptr,
 		ray_data->img.img, 0, 0);
 }

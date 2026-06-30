@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   takes_info.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:06:06 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:28:51 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_fd(char *file)
 {
-	int		fd;
+	int	fd;
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
@@ -34,10 +34,11 @@ char	**read_file(int fd, int nbline)
 	int		len;
 
 	i = 0;
-	file = malloc(sizeof (char *) * (nbline + 1));
+	file = malloc(sizeof(char *) * (nbline + 1));
 	if (!file)
 		return (NULL);
-	while ((line = get_next_line(fd)))
+	line = get_next_line(fd);
+	while (line)
 	{
 		len = ft_strlen(line);
 		file[i] = malloc(sizeof(char) * (len + 1));
@@ -48,6 +49,7 @@ char	**read_file(int fd, int nbline)
 			file[i][len - 1] = '\0';
 		free(line);
 		i++;
+		line = get_next_line(fd);
 	}
 	file[i] = NULL;
 	return (close(fd), file);

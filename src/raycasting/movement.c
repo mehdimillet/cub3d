@@ -6,7 +6,7 @@
 /*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:22 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/16 14:38:24 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:29:19 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "../headers/raycasting.h"
 #include <math.h>
 
-# define MOVE_SPEED 3.0
-# define ROTATE_SPEED 2.0
+#define MOVE_SPEED 3.0
+#define ROTATE_SPEED 2.0
 
 // retourne 1 si la case est accessible (pas un mur, pas hors map)
 int	is_walkable(t_cub *map, double x, double y)
@@ -27,7 +27,7 @@ int	is_walkable(t_cub *map, double x, double y)
 	gy = (int)floor(y);
 	if (gx < 0 || gy < 0 || gy >= map->height || gx >= map->width)
 		return (0);
-	return (map->map[gy][gx] == '0');
+	return (map->map[gy][gx] == '0' || ft_strchr("NSEW", map->map[gy][gx]));
 }
 
 // deplace le joueur selon les touches WASD, bloque si mur
@@ -61,7 +61,8 @@ void	update_player(t_raycaster *rc, double dt)
 	double	speed;
 
 	speed = MOVE_SPEED * dt;
-	move_player(rc, cos(rc->player_angle) * speed, sin(rc->player_angle) * speed);
+	move_player(rc, cos(rc->player_angle) * speed, sin(rc->player_angle)
+		* speed);
 	if (rc->key_left)
 		rc->player_angle -= ROTATE_SPEED * dt;
 	if (rc->key_right)

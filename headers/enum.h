@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   enum.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:53:53 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:56:19 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:27:48 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENUM_H
 # define ENUM_H
-//in map.h
+// in map.h
 
-//false = no seen and true = seen
+// false = no seen and true = seen
 typedef enum e_check
 {
 	NO = 0,

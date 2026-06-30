@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 14:19:32 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 16:01:41 by memillet         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:29:44 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers/cub3d.h"
+
 // #include "../headers/raycasting.h"
 
 // ./cub3d map.cub
