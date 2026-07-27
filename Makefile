@@ -18,13 +18,14 @@ SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parsing/map/parse_map.c \
 			$(SRC_DIR)/gnl/get_next_line.c \
 			$(SRC_DIR)/gnl/get_next_line_utils.c \
+			$(SRC_DIR)/minimap/minimap.c \
 			$(SRC_DIR)/raycasting/raycasting_core.c \
 			$(SRC_DIR)/raycasting/cast_ray.c \
 			$(SRC_DIR)/raycasting/raycasting.c \
 			$(SRC_DIR)/raycasting/mlx_engine.c \
 			$(SRC_DIR)/raycasting/renderer.c \
 			$(SRC_DIR)/raycasting/input.c \
-			$(SRC_DIR)/raycasting/movement.c
+			$(SRC_DIR)/raycasting/movement.c\
 # 			$(SRC_DIR)/parsing/init_struct.c \
  
 OBJECTS = $(SOURCES:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:05 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/27 17:58:51 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:01:52 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ int		check_map_closed(t_cub *info);
 
 // init_struct.c
 void	init_player(t_player *j);
+
+void	draw_minimap(t_raycaster *rc);
+void	put_tile(t_raycaster *rc, int px, int py, int color);
 
 #endif

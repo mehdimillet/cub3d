@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/27 17:46:36 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:02:10 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int	game_loop(t_raycaster *ray_data)
 		render_column(ray_data, col, &ray);
 		col++;
 	}
+	draw_minimap(ray_data);
 	render_frame(ray_data);
 	return (0);
 }

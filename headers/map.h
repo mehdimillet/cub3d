@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/30 13:28:20 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/27 19:09:17 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 # define MAP_H
 
 // color for the celling and the floor
+# ifndef TILE
+#  define TILE 10
+# endif
+
+# ifndef MINIMAP_FLOOR
+#  define MINIMAP_FLOOR 0xAAAAAA
+#endif
+
+# ifndef MINIMAP_WALL
+#  define MINIMAP_WALL 0x444444
+#endif
+
 typedef struct s_color
 {
 	int			red;
