@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   renderer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:41 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/23 01:06:47 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:46:36 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ static int	get_tex_x(t_ray *ray, t_texture *tex)
 	return (tex_x);
 }
 
+int	get_view_offset(t_raycaster *ray_data)
+{
+	return (ray_data->view_bob);
+}
+
 static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start,
 		int end)
 {
@@ -76,10 +81,12 @@ void	render_column(t_raycaster *ray_data, int col, t_ray *ray)
 	int	wall_height;
 	int	wall_start;
 	int	wall_end;
+	int	offset;
 
+	offset = get_view_offset(ray_data);
 	wall_height = (int)(SCREEN_HEIGHT / ray->perp_dist);
-	wall_start = (SCREEN_HEIGHT - wall_height) / 2;
-	wall_end = (SCREEN_HEIGHT + wall_height) / 2;
+	wall_start = (SCREEN_HEIGHT - wall_height) / 2 + offset;
+	wall_end = (SCREEN_HEIGHT + wall_height) / 2 + offset;
 	draw_column(ray_data, col, ray, wall_start, wall_end);
 }
 

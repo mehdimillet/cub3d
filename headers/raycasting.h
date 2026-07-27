@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 00:00:00 by you               #+#    #+#             */
-/*   Updated: 2026/07/22 02:28:00 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:46:36 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define SCREEN_WIDTH 1280
 # define SCREEN_HEIGHT 720
 # define FOV 1.0471975511965976
+# define MOUSE_SENSITIVITY 0.003
 
 typedef struct s_img
 {
@@ -57,6 +58,11 @@ typedef struct s_raycaster
 	int		key_d;
 	int		key_left;
 	int		key_right;
+	int		mouse_initialized;
+	int		last_mouse_x;
+	int		mouse_ignore_next;
+	double	anim_time;
+	int		view_bob;
 }			t_raycaster;
 
 typedef struct s_dda
@@ -90,6 +96,7 @@ int			start_raycasting(t_cub *map);
 // renderer.c
 void		render_column(t_raycaster *ray_data, int col, t_ray *ray);
 void		render_frame(t_raycaster *ray_data);
+int			get_view_offset(t_raycaster *ray_data);
 
 // mlx_engine.c
 int			init_mlx(t_raycaster *ray_data);
@@ -99,6 +106,7 @@ void		destroy_mlx(t_raycaster *ray_data);
 // input.c
 int			key_press(int keycode, t_raycaster *ray_data);
 int			key_release(int keycode, t_raycaster *ray_data);
+int		mouse_move(int x, int y, t_raycaster *ray_data);
 int			close_window(t_raycaster *ray_data);
 
 // movement.c
