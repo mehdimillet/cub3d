@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/27 17:52:56 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 18:01:17 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ int	parse_the_world(char **av, t_cub *info)
 	close(fd);
 	if (info_distrib(file, info) != 0)
 		return (free_tab(file), free_cub(info), 1);
-	file_to_map(file, info);
+	if (file_to_map(file, info) != 0)
+		return (free_tab(file), free_cub(info), 1);
 	if (check_charset_and_player(info) != 0)
 		return (free_tab(file), free_cub(info), 1);
 	if (check_map_closed(info) != 0)
