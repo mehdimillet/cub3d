@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   includes.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:05 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/30 13:28:16 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/21 20:37:42 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
-// # include "minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx.h"
 
 // check_file.c
 int		check_filename(char *map_name);

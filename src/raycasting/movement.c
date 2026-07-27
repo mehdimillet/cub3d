@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:22 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/30 13:29:19 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/27 14:08:14 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,23 @@ int	is_walkable(t_cub *map, double x, double y)
 {
 	int	gx;
 	int	gy;
+	int	len;
 
 	gx = (int)floor(x);
 	gy = (int)floor(y);
-	if (gx < 0 || gy < 0 || gy >= map->height || gx >= map->width)
+	if (gx < 0 || gy < 0 || gy >= map->height)
 		return (0);
-	return (map->map[gy][gx] == '0' || ft_strchr("NSEW", map->map[gy][gx]));
+	len = (int)ft_strlen(map->map[(int)gy]);
+	if (gx >= len)
+		return (0);
+	if (map->map[(int)(y + HITBOX)][(int)(x + HITBOX)] == '1' ||
+		map->map[(int)(y + HITBOX)][(int)(x - HITBOX)] == '1' ||
+		map->map[(int)(y - HITBOX)][(int)(x + HITBOX)] == '1' ||
+		map->map[(int)(y - HITBOX)][(int)(x - HITBOX)] == '1')
+		return (0);
+	if (ft_strchr("0NSEW", map->map[gy][gx]))
+		return (1);
+	return (0);
 }
 
 // deplace le joueur selon les touches WASD, bloque si mur

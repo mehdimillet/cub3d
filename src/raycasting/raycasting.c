@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/30 13:29:30 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/27 13:57:24 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
-#include "../../minilibx-linux/mlx.h"
 
 static double	get_delta_time(void)
 {

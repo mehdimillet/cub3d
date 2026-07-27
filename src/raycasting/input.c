@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:17 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/17 15:59:36 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/21 20:36:50 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
-#include "../minilibx-linux/mlx.h"
 
 // active le flag de la touche pressee
 int	key_press(int keycode, t_raycaster *ray_data)

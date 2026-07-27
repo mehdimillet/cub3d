@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   player.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:29 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/30 13:28:23 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/27 13:26:54 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PLAYER_H
 # define PLAYER_H
+
+# ifndef HITBOX
+#  define HITBOX 0.1
+# endif
 
 typedef struct s_player
 {

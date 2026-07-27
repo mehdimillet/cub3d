@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_engine.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:08 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/30 13:29:11 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/21 20:36:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
-#include "../minilibx-linux/mlx.h"
 
 static void	free_textures(t_raycaster *ray_data, int count)
 {

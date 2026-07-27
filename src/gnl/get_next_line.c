@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:21:27 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/30 13:28:39 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/21 22:55:40 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,11 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (!buff_stay)
 		buff_stay = ft_substr("", 0, 0);
-	buff_read = read(fd, buffer, BUFFER_SIZE);
-	while (!ft_strchr(buff_stay, '\n') && buff_read > 0)
+	while (!ft_strchr(buff_stay, '\n')
+		&& (buff_read = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
 		buffer[buff_read] = '\0';
 		buff_stay = ft_strjoin(buff_stay, buffer);
-		buff_read = read(fd, buffer, BUFFER_SIZE);
 	}
 	free(buffer);
 	line = ft_extract_line(buff_stay);

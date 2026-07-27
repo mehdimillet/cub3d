@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 00:00:00 by you               #+#    #+#             */
-/*   Updated: 2026/06/30 13:28:26 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/22 02:28:00 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <math.h>
 
 # ifndef PI
-#  define PI 3.14159265358979323846
+#  define PI 3.1415926535897932384626
 # endif
 
 # define SCREEN_WIDTH 1280

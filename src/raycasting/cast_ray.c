@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cast_ray.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 17:03:03 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/30 13:29:01 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/27 13:56:02 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ int	cast_ray(t_raycaster *rc, double angle, t_ray *ray)
 	ray->hit_y = rc->player_y + ray->perp_dist * dda.dir_y;
 	ray->hit_vertical = (dda.side == 1);
 	ray->wall_type = get_wall_type(ray);
+	ray->perp_dist = ray->perp_dist * cos(ray->angle - rc->player_angle);
 	return (0);
 }

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   renderer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:41 by leauvray          #+#    #+#             */
-/*   Updated: 2026/06/30 13:29:41 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/23 01:06:47 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
-#include "../minilibx-linux/mlx.h"
 
 static int	color_to_int(t_color c)
 {
@@ -60,9 +59,9 @@ static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start,
 		wall_height = 1;
 	tex_x = get_tex_x(ray, tex);
 	y = 0;
-	while (y < start)
+	while (y < start && y < SCREEN_HEIGHT)
 		put_pixel(rc, col, y++, color_to_int(rc->map->ceiling));
-	while (y <= end)
+	while (y <= end && y < SCREEN_HEIGHT)
 	{
 		put_pixel(rc, col, y, get_tex_pixel(tex, tex_x,
 				((y - start) * tex->length) / wall_height));
@@ -81,10 +80,6 @@ void	render_column(t_raycaster *ray_data, int col, t_ray *ray)
 	wall_height = (int)(SCREEN_HEIGHT / ray->perp_dist);
 	wall_start = (SCREEN_HEIGHT - wall_height) / 2;
 	wall_end = (SCREEN_HEIGHT + wall_height) / 2;
-	if (wall_start < 0)
-		wall_start = 0;
-	if (wall_end >= SCREEN_HEIGHT)
-		wall_end = SCREEN_HEIGHT - 1;
 	draw_column(ray_data, col, ray, wall_start, wall_end);
 }
 
