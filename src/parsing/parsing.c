@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/21 22:32:01 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:52:56 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,30 +57,16 @@ int	info_distrib(char **file, t_cub *info)
 		if (is_know(file[i]) == 0)
 		{
 			if (choose_texture(info, file[i]) != 0)
-			{
-				printf("ligne refusee: [%s]\n", file[i]);
-				printf("seen: NO=%d SO=%d WE=%d EA=%d F=%d C=%d\n",
-    			info->seen[NO], info->seen[SO], info->seen[WE],
-    			info->seen[EA], info->seen[F], info->seen[C]);
 				return (1);
-			}
 			i++;
 		}
 		else
 		{
 			if (check_all_seen(info) == 0)
 				return (info->map_start = i, 0);
-			printf("ligne refusee: [%s]\n", file[i]);
-			printf("seen: NO=%d SO=%d WE=%d EA=%d F=%d C=%d\n",
-    		info->seen[NO], info->seen[SO], info->seen[WE],
-    		info->seen[EA], info->seen[F], info->seen[C]);
 			return (1);
 		}
 	}
-	printf("ligne refusee: [%s]\n", file[i]);
-	printf("seen: NO=%d SO=%d WE=%d EA=%d F=%d C=%d\n",
-    info->seen[NO], info->seen[SO], info->seen[WE],
-    info->seen[EA], info->seen[F], info->seen[C]);
 	return (error_msg(("Error\nNo map found\n")), 1);
 }
 
@@ -98,14 +84,6 @@ int	parse_the_world(char **av, t_cub *info)
 	close (fd);
 	fd = get_fd(av[1]);
 	file = read_file(fd, len);
-	printf("count_line a retourne: %d\n", len);
-	int k = 0;
-	while (file[k])
-	{
-	    printf("file[%d] = [%s]\n", k, file[k]);
-	    k++;
-	}
-	printf("--- fin, %d lignes ---\n", k);
 	close(fd);
 	if (info_distrib(file, info) != 0)
 		return (free_tab(file), free_cub(info), 1);

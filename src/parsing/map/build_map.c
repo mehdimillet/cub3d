@@ -6,32 +6,31 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:27:10 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 16:10:51 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:59:08 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-void	file_to_map(char **file, t_cub *info)
+int	file_to_map(char **file, t_cub *info)
 {
 	int	i;
 	int	j;
 
 	i = info->map_start;
 	j = 0;
-	info->map = malloc(sizeof(char *) * (info->nb_line - i + 1));
+	info->map = ft_calloc(sizeof(char *), info->nb_line - i + 1);
 	if (!info->map)
-		return ;
+		return (1);
 	while (file[i])
 	{
 		info->map[j] = ft_strdup(file[i]);
 		if (!info->map[j])
-			return (free_tab(info->map));
+			return (free_tab(info->map), 1);
 		i++;
 		j++;
 	}
-	info->map[j] = NULL;
-	info->height = j;
+	info->map[j] = NULL, info->height = j;
 	j = 0;
 	while (info->map[j])
 	{
@@ -39,6 +38,7 @@ void	file_to_map(char **file, t_cub *info)
 			info->width = ft_strlen(info->map[j]);
 		j++;
 	}
+	return (0);
 }
 
 char	**ft_map_duplicate(t_cub *info)

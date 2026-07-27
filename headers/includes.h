@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:05 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/21 20:37:42 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/27 17:58:51 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		is_blank_line(char *line);
 void	free_cub(t_cub *info);
 
 // build_map.c
-void	file_to_map(char **file, t_cub *info);
+int	file_to_map(char **file, t_cub *info);
 
 // parse_map.c
 char	**ft_map_duplicate(t_cub *info);

@@ -3,3 +3,5 @@
 *.a
 minilibx-linux/*.o
 minilibx-linux/libmlx.a
+minilibx-linux
+minilibx-linux.tgz
