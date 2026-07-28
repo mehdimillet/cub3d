@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 18:44:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/28 17:04:39 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/28 19:42:02 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	put_player(t_raycaster *rc, int px, int py, int color)
 	int	j;
 	int	r;
 
-	r = 2;
+	r = TILE_PLAYER;
 	i = -r;
 	while (i <= r)
 	{

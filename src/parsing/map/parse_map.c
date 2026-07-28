@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 17:03:23 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/28 19:48:05 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	check_charset_and_player(t_cub *info)
 	int			x;
 	const char	*allowed;
 
-	allowed = "01NSEW ";
+	allowed = "01NSEWD ";
 	y = 0;
 	while (info->map[y])
 	{
@@ -66,7 +66,7 @@ void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
 		info->leak = 1;
 		return ;
 	}
-	if (map_cpy[y][x] == 'V' || map_cpy[y][x] == '1')
+	if (map_cpy[y][x] == 'V' || map_cpy[y][x] == '1' || map_cpy[y][x] == 'D')
 		return ;
 	else
 		map_cpy[y][x] = 'V';

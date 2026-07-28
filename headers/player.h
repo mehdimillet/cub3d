@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:29 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/28 17:04:31 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/28 19:42:09 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # endif
 
 # ifndef TILE_PLAYER
-#  define TILE_PLAYER 4
+#  define TILE_PLAYER 2
 # endif
 
 # ifndef MINIMAP_PLAYER
