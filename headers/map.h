@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/27 19:09:17 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/28 17:04:29 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 # ifndef MINIMAP_FLOOR
 #  define MINIMAP_FLOOR 0xAAAAAA
-#endif
+# endif
 
 # ifndef MINIMAP_WALL
 #  define MINIMAP_WALL 0x444444
-#endif
+# endif
 
 typedef struct s_color
 {

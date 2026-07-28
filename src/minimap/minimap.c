@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 18:44:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/27 19:09:06 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/28 17:04:39 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,27 @@ void	put_tile(t_raycaster *rc, int px, int py, int color)
 	}
 }
 
+void	put_player(t_raycaster *rc, int px, int py, int color)
+{
+	int	i;
+	int	j;
+	int	r;
+
+	r = 2;
+	i = -r;
+	while (i <= r)
+	{
+		j = -r;
+		while (j <= r)
+		{
+			put_pixel(rc, px + j, py + i, color);
+			j++;
+		}
+		i++;
+	}
+	
+}
+
 void	draw_minimap(t_raycaster *rc)
 {
 	int	y;
@@ -49,4 +70,5 @@ void	draw_minimap(t_raycaster *rc)
 		}
 		y++;
 	}
+	put_player(rc, (int)(rc->player_x * TILE), (int)(rc->player_y * TILE), MINIMAP_PLAYER);
 }
