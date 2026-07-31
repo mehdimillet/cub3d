@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:21:27 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/21 22:55:40 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 15:56:40 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,11 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (!buff_stay)
 		buff_stay = ft_substr("", 0, 0);
-	while (!ft_strchr(buff_stay, '\n')
-		&& (buff_read = read(fd, buffer, BUFFER_SIZE)) > 0)
+	while (!ft_strchr(buff_stay, '\n'))
 	{
+		buff_read = read(fd, buffer, BUFFER_SIZE);
+		if (buff_read <= 0)
+			break ;
 		buffer[buff_read] = '\0';
 		buff_stay = ft_strjoin(buff_stay, buffer);
 	}

@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 18:44:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/30 18:35:18 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 15:51:19 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	put_player(t_raycaster *rc, int px, int py, int color)
 		}
 		i++;
 	}
-	
 }
 
 static int	tile_calcul(t_raycaster *rc)
@@ -68,7 +67,7 @@ void	draw_minimap(t_raycaster *rc)
 	int	y;
 	int	x;
 
-	rc->tile =  tile_calcul(rc);
+	rc->tile = tile_calcul(rc);
 	if (rc->tile < 1)
 		rc->tile = 1;
 	y = 0;
@@ -85,5 +84,6 @@ void	draw_minimap(t_raycaster *rc)
 		}
 		y++;
 	}
-	put_player(rc, (int)(rc->player_x * rc->tile), (int)(rc->player_y * rc->tile), MINIMAP_PLAYER);
+	put_player(rc, (int)(rc->player_x * rc->tile),
+		(int)(rc->player_y * rc->tile), MINIMAP_PLAYER);
 }

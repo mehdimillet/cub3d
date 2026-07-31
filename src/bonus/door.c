@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 18:08:32 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/30 18:16:03 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 15:51:39 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	toggle_door(t_raycaster *rc)
 {
 	double	tx;
 	double	ty;
-	int	len;
+	int		len;
 
 	tx = rc->player_x + cos(rc->player_angle);
 	ty = rc->player_y + sin(rc->player_angle);
