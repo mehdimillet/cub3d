@@ -12,7 +12,6 @@ SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parsing/tools.c \
 			$(SRC_DIR)/parsing/info/parse_color.c \
 			$(SRC_DIR)/parsing/info/parse_texture.c \
-			$(SRC_DIR)/parsing/info/parse_door.c \
 			$(SRC_DIR)/parsing/files/check_file.c \
 			$(SRC_DIR)/parsing/files/takes_info.c \
 			$(SRC_DIR)/parsing/map/build_map.c \

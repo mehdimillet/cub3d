@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 00:00:00 by you               #+#    #+#             */
-/*   Updated: 2026/07/30 18:33:21 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:14:29 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,38 +82,5 @@ typedef struct s_dda
 	int		step_y;
 	int		side;
 }			t_dda;
-
-// raycasting_core.c
-double		normalize_angle(double angle);
-int			get_wall_type(t_ray *ray);
-int			is_wall(t_cub *map, double x, double y);
-int			raycasting_loop(t_raycaster *ray_data);
-
-// cast_ray.c
-int			cast_ray(t_raycaster *rc, double angle, t_ray *ray);
-
-// raycasting.c
-int			game_loop(t_raycaster *ray_data);
-int			start_raycasting(t_cub *map);
-
-// renderer.c
-void		render_column(t_raycaster *ray_data, int col, t_ray *ray);
-void		render_frame(t_raycaster *ray_data);
-int			get_view_offset(t_raycaster *ray_data);
-
-// mlx_engine.c
-int			init_mlx(t_raycaster *ray_data);
-void		put_pixel(t_raycaster *ray_data, int x, int y, int color);
-void		destroy_mlx(t_raycaster *ray_data);
-
-// input.c
-int			key_press(int keycode, t_raycaster *ray_data);
-int			key_release(int keycode, t_raycaster *ray_data);
-int		mouse_move(int x, int y, t_raycaster *ray_data);
-int			close_window(t_raycaster *ray_data);
-
-// movement.c
-int			is_walkable(t_cub *map, double x, double y);
-void		update_player(t_raycaster *ray_data, double delta_time);
 
 #endif

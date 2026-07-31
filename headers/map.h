@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/30 18:36:45 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 17:09:06 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MAP_H
 
 # ifndef MINIMAP_MAX
-#  define 	MINIMAP_MAX 250
+#  define MINIMAP_MAX 250
 # endif
 
 # ifndef MINIMAP_FLOOR
