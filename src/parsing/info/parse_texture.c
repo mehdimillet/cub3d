@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 07:17:39 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/29 21:25:10 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 16:33:29 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,49 +19,35 @@ static int	check_dup(t_cub *info, int idx)
 	return (0);
 }
 
+static int	set_texture(t_cub *info, char *line, int idx)
+{
+	if (check_dup(info, idx))
+		return (1);
+	info->seen[idx] = 1;
+	if (idx == D)
+		stock_texture(&info->tex[4], line, idx);
+	else
+		stock_texture(&info->tex[idx], line, idx);
+	return (0);
+}
+
 static int	try_cardinal(t_cub *info, char *line)
 {
 	int	c2;
 
-	c2 = line[2] == ' ' || line[2] == '\t';
+	c2 = (line[2] == ' ' || line[2] == '\t');
 	if (line[0] == 'N' && line[1] == 'O' && c2)
-	{
-		if (check_dup(info, NO))
-			return (1);
-		info->seen[NO] = 1;
-		stock_texture(&info->tex[0], line, NO);
-	}
+		return (set_texture(info, line, NO));
 	else if (line[0] == 'S' && line[1] == 'O' && c2)
-	{
-		if (check_dup(info, SO))
-			return (1);
-		info->seen[SO] = 1;
-		stock_texture(&info->tex[1], line, SO);
-	}
+		return (set_texture(info, line, SO));
 	else if (line[0] == 'W' && line[1] == 'E' && c2)
-	{
-		if (check_dup(info, WE))
-			return (1);
-		info->seen[WE] = 1;
-		stock_texture(&info->tex[2], line, WE);
-	}
+		return (set_texture(info, line, WE));
 	else if (line[0] == 'E' && line[1] == 'A' && c2)
-	{
-		if (check_dup(info, EA))
-			return (1);
-		info->seen[EA] = 1;
-		stock_texture(&info->tex[3], line, EA);
-	}
+		return (set_texture(info, line, EA));
 	else if (line[0] == 'D' && (line[1] == ' ' || line[1] == '\t'))
-	{
-		if (check_dup(info, D))
-			return (1);
-		info->seen[D] = 1;
-		stock_texture(&info->tex[4], line, D);
-	}
+		return (set_texture(info, line, D));
 	else
 		return (choose_fc(info, line));
-	return (0);
 }
 
 int	choose_texture(t_cub *info, char *line)
