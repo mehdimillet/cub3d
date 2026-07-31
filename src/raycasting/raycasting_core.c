@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:29 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/22 20:25:36 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/29 17:55:04 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	is_wall(t_cub *map, double x, double y)
 		|| grid_x >= (int)ft_strlen(map->map[grid_y]))
 		return (1);
 	c = map->map[grid_y][grid_x];
-	if (c == '1')
+	if (c == '1' || c == 'D')
 		return (1);
 	return (0);
 }

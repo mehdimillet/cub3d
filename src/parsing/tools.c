@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:49:25 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 16:04:09 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/29 18:12:39 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	free_cub(t_cub *info)
 	if (!info)
 		return ;
 	i = 0;
-	while (i < 4)
+	while (i < 5)
 	{
 		if (info->tex[i].path)
 		{

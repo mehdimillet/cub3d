@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 17:03:03 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/27 13:56:02 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/30 18:03:27 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int	cast_ray(t_raycaster *rc, double angle, t_ray *ray)
 	calc_delta(&dda);
 	calc_step(rc, &dda);
 	dda_loop(rc, &dda);
+	ray->tile = rc->map->map[dda.map_y][dda.map_x];
 	if (dda.side == 0)
 		ray->perp_dist = (dda.map_x - rc->player_x
 				+ (1 - dda.step_x) / 2.0) / dda.dir_x;

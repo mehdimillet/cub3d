@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/28 19:48:05 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/29 21:26:41 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	check_charset_and_player(t_cub *info)
 				return (error_msg("Error\nInvalid char in map\n"), 1);
 			if (ft_strchr("NSEW", info->map[y][x]))
 				is_player(info, x, y);
+			if (info->map[y][x] == 'D')
+				info->door_found = 1;
 			x++;
 		}
 		y++;
@@ -66,7 +68,7 @@ void	flood_fill(char	**map_cpy, int y, int x, t_cub *info)
 		info->leak = 1;
 		return ;
 	}
-	if (map_cpy[y][x] == 'V' || map_cpy[y][x] == '1' || map_cpy[y][x] == 'D')
+	if (map_cpy[y][x] == 'V' || map_cpy[y][x] == '1')
 		return ;
 	else
 		map_cpy[y][x] = 'V';

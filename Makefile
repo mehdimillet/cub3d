@@ -12,13 +12,15 @@ SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parsing/tools.c \
 			$(SRC_DIR)/parsing/info/parse_color.c \
 			$(SRC_DIR)/parsing/info/parse_texture.c \
+			$(SRC_DIR)/parsing/info/parse_door.c \
 			$(SRC_DIR)/parsing/files/check_file.c \
 			$(SRC_DIR)/parsing/files/takes_info.c \
 			$(SRC_DIR)/parsing/map/build_map.c \
 			$(SRC_DIR)/parsing/map/parse_map.c \
 			$(SRC_DIR)/gnl/get_next_line.c \
 			$(SRC_DIR)/gnl/get_next_line_utils.c \
-			$(SRC_DIR)/minimap/minimap.c \
+			$(SRC_DIR)/bonus/minimap.c \
+			$(SRC_DIR)/bonus/door.c \
 			$(SRC_DIR)/raycasting/raycasting_core.c \
 			$(SRC_DIR)/raycasting/cast_ray.c \
 			$(SRC_DIR)/raycasting/raycasting.c \

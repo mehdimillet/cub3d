@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:08 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/21 20:36:23 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/29 21:54:09 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,13 @@ static void	free_textures(t_raycaster *ray_data, int count)
 static int	load_textures(t_raycaster *ray_data)
 {
 	int	i;
+	int	max;
 
 	i = 0;
-	while (i < 4)
+	max = 4;
+	if (ray_data->map->seen[D] == 1)
+		max = 5;
+	while (i < max)
 	{
 		if (!ray_data->map->tex[i].path)
 			return (error_msg("Error\nMissing texture path\n"),

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:17 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/27 17:46:36 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/30 18:21:01 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	key_press(int keycode, t_raycaster *ray_data)
 		ray_data->key_left = 1;
 	if (keycode == 65363)
 		ray_data->key_right = 1;
+	if (keycode == 101)
+		toggle_door(ray_data);
 	if (keycode == 65307)
 		close_window(ray_data);
 	return (0);

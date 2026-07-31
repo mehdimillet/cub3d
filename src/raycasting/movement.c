@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:22 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/27 14:08:14 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/30 17:58:22 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_walkable(t_cub *map, double x, double y)
 		map->map[(int)(y - HITBOX)][(int)(x + HITBOX)] == '1' ||
 		map->map[(int)(y - HITBOX)][(int)(x - HITBOX)] == '1')
 		return (0);
-	if (ft_strchr("0NSEW", map->map[gy][gx]))
+	if (ft_strchr("0NSEWO", map->map[gy][gx]))
 		return (1);
 	return (0);
 }

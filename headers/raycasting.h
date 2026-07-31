@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 00:00:00 by you               #+#    #+#             */
-/*   Updated: 2026/07/27 17:46:36 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/30 18:33:21 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_ray
 	double	perp_dist;
 	double	hit_x;
 	double	hit_y;
+	char	tile;
 	int		wall_type;
 	int		hit_vertical;
 }			t_ray;
@@ -58,11 +59,13 @@ typedef struct s_raycaster
 	int		key_d;
 	int		key_left;
 	int		key_right;
+	int		key_e;
 	int		mouse_initialized;
 	int		last_mouse_x;
 	int		mouse_ignore_next;
 	double	anim_time;
 	int		view_bob;
+	int		tile;
 }			t_raycaster;
 
 typedef struct s_dda

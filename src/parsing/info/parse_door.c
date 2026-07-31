@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enum.h                                             :+:      :+:    :+:   */
+/*   parse_door.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/25 15:53:53 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/29 18:00:58 by memillet         ###   ########.fr       */
+/*   Created: 2026/07/29 21:27:27 by memillet          #+#    #+#             */
+/*   Updated: 2026/07/29 21:46:11 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENUM_H
-# define ENUM_H
-// in map.h
+#include "headers/cub3d.h"
 
-// false = no seen and true = seen
-typedef enum e_check
+int if_door(t_cub *info)
 {
-	NO = 0,
-	SO = 1,
-	WE = 2,
-	EA = 3,
-	F = 4,
-	C = 5,
-	D = 6
-}	t_check;
-
-#endif
+    if (info->door_found == 1 && info->seen[D] == 0)
+        return (error_msg("Error\nDoors in map but not the texture\n"), 1);
+    if (info->door_found == 0 && info->seen[D] == 1)
+        return (error_msg("Error\nNo doors in the map but have texture\n"), 1);
+    return (0);
+}

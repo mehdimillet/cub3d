@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:05:37 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/27 18:01:17 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/29 21:37:51 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	is_know(char *line)
 	else if (line[0] == 'E' && line[1] == 'A')
 		return (0);
 	else if (line[0] == 'F' || line[0] == 'C')
+		return (0);
+	else if (line[0] == 'D')
 		return (0);
 	return (1);
 }
@@ -93,6 +95,8 @@ int	parse_the_world(char **av, t_cub *info)
 		return (free_tab(file), free_cub(info), 1);
 	if (check_map_closed(info) != 0)
 		return (free_tab(file), free_cub(info), 1);
+	if (if_door(info) != 0)
+		return (free_tab(file), free_cub(info), 1);	
 	free_tab(file);
 	return (0);
 }

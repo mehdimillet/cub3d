@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 07:17:39 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 15:05:52 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/29 21:25:10 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,35 @@ static int	try_cardinal(t_cub *info, char *line)
 		if (check_dup(info, NO))
 			return (1);
 		info->seen[NO] = 1;
-		stock_texture(&info->tex[0], line);
+		stock_texture(&info->tex[0], line, NO);
 	}
 	else if (line[0] == 'S' && line[1] == 'O' && c2)
 	{
 		if (check_dup(info, SO))
 			return (1);
 		info->seen[SO] = 1;
-		stock_texture(&info->tex[1], line);
+		stock_texture(&info->tex[1], line, SO);
 	}
 	else if (line[0] == 'W' && line[1] == 'E' && c2)
 	{
 		if (check_dup(info, WE))
 			return (1);
 		info->seen[WE] = 1;
-		stock_texture(&info->tex[2], line);
+		stock_texture(&info->tex[2], line, WE);
 	}
 	else if (line[0] == 'E' && line[1] == 'A' && c2)
 	{
 		if (check_dup(info, EA))
 			return (1);
 		info->seen[EA] = 1;
-		stock_texture(&info->tex[3], line);
+		stock_texture(&info->tex[3], line, EA);
+	}
+	else if (line[0] == 'D' && (line[1] == ' ' || line[1] == '\t'))
+	{
+		if (check_dup(info, D))
+			return (1);
+		info->seen[D] = 1;
+		stock_texture(&info->tex[4], line, D);
 	}
 	else
 		return (choose_fc(info, line));
@@ -62,12 +69,22 @@ int	choose_texture(t_cub *info, char *line)
 	return (try_cardinal(info, line));
 }
 
-void	stock_texture(t_texture *tex, char *line)
+void	stock_texture(t_texture *tex, char *line, int id)
 {
 	int	i;
 
-	i = 2;
-	while (line[i] == ' ' || line[i] == '\t')
-		i++;
-	tex->path = ft_strdup(&line[i]);
+	if (id == D)
+	{
+		i = 1;
+		while (line[i] == ' ' || line[i] == '\t')
+			i++;
+		tex->path = ft_strdup(&line[i]);
+	}
+	else
+	{
+		i = 2;
+		while (line[i] == ' ' || line[i] == '\t')
+			i++;
+		tex->path = ft_strdup(&line[i]);
+	}
 }

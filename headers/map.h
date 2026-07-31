@@ -6,16 +6,15 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/28 17:04:29 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/30 18:36:45 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
 
-// color for the celling and the floor
-# ifndef TILE
-#  define TILE 10
+# ifndef MINIMAP_MAX
+#  define 	MINIMAP_MAX 250
 # endif
 
 # ifndef MINIMAP_FLOOR
@@ -50,16 +49,17 @@ typedef struct s_texture
 typedef struct s_cub
 {
 	char		**map;
+	int			door_found;
 	int			leak;
 	int			nb_line;
 	int			height;
 	int			width;
 	int			map_start;
-	int			seen[6];
+	int			seen[7];
 	t_color		floor;
 	t_color		ceiling;
 	t_player	pos;
-	t_texture	tex[4];
+	t_texture	tex[5];
 }			t_cub;
 
 #endif

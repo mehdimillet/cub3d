@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   renderer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:41 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/27 17:46:36 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/07/30 17:56:20 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start,
 	int			tex_x;
 	int			y;
 
-	tex = &rc->map->tex[ray->wall_type];
+	if (ray->tile == 'D')
+		tex = &rc->map->tex[4];
+	else
+		tex = &rc->map->tex[ray->wall_type];
 	wall_height = end - start;
 	if (wall_height <= 0)
 		wall_height = 1;

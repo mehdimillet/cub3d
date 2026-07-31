@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 18:44:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/28 19:42:02 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/30 18:35:18 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	put_tile(t_raycaster *rc, int px, int py, int color)
 	int	j;
 
 	i = 0;
-	while (i < TILE)
+	while (i < rc->tile)
 	{
 		j = 0;
-		while (j < TILE)
+		while (j < rc->tile)
 		{
 			put_pixel(rc, px + j, py + i, color);
 			j++;
@@ -51,11 +51,26 @@ void	put_player(t_raycaster *rc, int px, int py, int color)
 	
 }
 
+static int	tile_calcul(t_raycaster *rc)
+{
+	int	tile_w;
+	int	tile_h;
+
+	tile_w = MINIMAP_MAX / rc->map->width;
+	tile_h = MINIMAP_MAX / rc->map->height;
+	if (tile_w < tile_h)
+		return (tile_w);
+	return (tile_h);
+}
+
 void	draw_minimap(t_raycaster *rc)
 {
 	int	y;
 	int	x;
 
+	rc->tile =  tile_calcul(rc);
+	if (rc->tile < 1)
+		rc->tile = 1;
 	y = 0;
 	while (rc->map->map[y])
 	{
@@ -63,12 +78,12 @@ void	draw_minimap(t_raycaster *rc)
 		while (rc->map->map[y][x])
 		{
 			if (rc->map->map[y][x] == '1')
-				put_tile(rc, x * TILE, y * TILE, MINIMAP_WALL);
+				put_tile(rc, x * rc->tile, y * rc->tile, MINIMAP_WALL);
 			else if (ft_strchr("0NSEW", rc->map->map[y][x]))
-				put_tile(rc, x * TILE, y * TILE, MINIMAP_FLOOR);
+				put_tile(rc, x * rc->tile, y * rc->tile, MINIMAP_FLOOR);
 			x++;
 		}
 		y++;
 	}
-	put_player(rc, (int)(rc->player_x * TILE), (int)(rc->player_y * TILE), MINIMAP_PLAYER);
+	put_player(rc, (int)(rc->player_x * rc->tile), (int)(rc->player_y * rc->tile), MINIMAP_PLAYER);
 }

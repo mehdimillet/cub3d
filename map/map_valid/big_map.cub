@@ -2,6 +2,8 @@ NO ./textures/cyber.xpm
 SO ./textures/cyber.xpm
 WE ./textures/cyber.xpm
 EA ./textures/cyber.xpm
+D ./textures/door.xpm
+
 F 10,10,15
 C 5,5,10
 
