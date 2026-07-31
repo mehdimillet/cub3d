@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:27:10 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 16:12:38 by memillet         ###   ########.fr       */
+/*   Updated: 2026/07/31 16:16:46 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,13 @@ int	file_to_map(char **file, t_cub *info)
 		info->map[j] = ft_strdup(file[i]);
 		if (!info->map[j])
 			return (free_tab(info->map), 1);
+		if ((int)ft_strlen(info->map[j]) > info->width)
+			info->width = ft_strlen(info->map[j]);
 		i++;
 		j++;
 	}
-	info->map[j] = NULL, info->height = j;
-	j = 0;
-	while (info->map[j])
-	{
-		if ((int)ft_strlen(info->map[j]) > info->width)
-			info->width = ft_strlen(info->map[j]);
-		j++;
-	}
+	info->map[j] = NULL;
+	info->height = j;
 	return (0);
 }
 
