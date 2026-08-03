@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 00:00:00 by you               #+#    #+#             */
-/*   Updated: 2026/07/31 17:14:29 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/03 15:20:35 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ typedef struct s_ray
 	int		wall_type;
 	int		hit_vertical;
 }			t_ray;
+
+typedef struct s_draw_col
+{
+	int	col;
+	int	start;
+	int	end;
+}	t_draw_col;
 
 typedef struct s_raycaster
 {

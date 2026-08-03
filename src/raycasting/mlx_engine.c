@@ -3,61 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_engine.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:08 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/29 21:54:09 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/03 14:46:02 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
-
-static void	free_textures(t_raycaster *ray_data, int count)
-{
-	int	i;
-
-	i = 0;
-	while (i < count)
-	{
-		if (ray_data->map->tex[i].img)
-			mlx_destroy_image(ray_data->mlx_ptr, ray_data->map->tex[i].img);
-		i++;
-	}
-}
-
-static int	load_textures(t_raycaster *ray_data)
-{
-	int	i;
-	int	max;
-
-	i = 0;
-	max = 4;
-	if (ray_data->map->seen[D] == 1)
-		max = 5;
-	while (i < max)
-	{
-		if (!ray_data->map->tex[i].path)
-			return (error_msg("Error\nMissing texture path\n"),
-				free_textures(ray_data, i), 1);
-		ray_data->map->tex[i].img = mlx_xpm_file_to_image(ray_data->mlx_ptr,
-				ray_data->map->tex[i].path, &ray_data->map->tex[i].width,
-				&ray_data->map->tex[i].length);
-		if (!ray_data->map->tex[i].img)
-			return (error_msg("Error\nFailed to load texture\n"),
-				free_textures(ray_data, i), 1);
-		ray_data->map->tex[i].addr = mlx_get_data_addr(
-				ray_data->map->tex[i].img,
-				&ray_data->map->tex[i].bits_per_pixel,
-				&ray_data->map->tex[i].line_length,
-				&ray_data->map->tex[i].endian);
-		if (!ray_data->map->tex[i].addr)
-			return (error_msg("Error\nFailed to get texture addr\n"),
-				free_textures(ray_data, i + 1), 1);
-		i++;
-	}
-	return (0);
-}
 
 // stock les valeurs de la mlx dans la structure ray_data
 int	init_mlx(t_raycaster *ray_data)
@@ -98,7 +52,7 @@ void	put_pixel(t_raycaster *ray_data, int x, int y, int color)
 // detruire les valeurs de la struct qu'on a set dans init_mlx
 void	destroy_mlx(t_raycaster *ray_data)
 {
-	free_textures(ray_data, 4);
+	free_textures(ray_data, 4 + (ray_data->map && ray_data->map->seen[D] == 1));
 	if (ray_data->img.img)
 		mlx_destroy_image(ray_data->mlx_ptr, ray_data->img.img);
 	if (ray_data->win_ptr)

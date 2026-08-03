@@ -22,9 +22,12 @@ SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/bonus/door.c \
 			$(SRC_DIR)/raycasting/raycasting_core.c \
 			$(SRC_DIR)/raycasting/cast_ray.c \
+			$(SRC_DIR)/raycasting/textures.c \
+			$(SRC_DIR)/raycasting/texture_sample.c \
 			$(SRC_DIR)/raycasting/raycasting.c \
 			$(SRC_DIR)/raycasting/mlx_engine.c \
 			$(SRC_DIR)/raycasting/renderer.c \
+			$(SRC_DIR)/raycasting/keys.c \
 			$(SRC_DIR)/raycasting/input.c \
 			$(SRC_DIR)/raycasting/movement.c\
 # 			$(SRC_DIR)/parsing/init_struct.c \

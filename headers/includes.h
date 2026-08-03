@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   includes.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 15:54:05 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 17:14:20 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/03 15:23:49 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,19 @@ int		cast_ray(t_raycaster *rc, double angle, t_ray *ray);
 int		game_loop(t_raycaster *ray_data);
 int		start_raycasting(t_cub *map);
 
+/* ************************* textures.c ****************************** */
+int		load_textures(t_raycaster *ray_data);
+void	free_textures(t_raycaster *ray_data, int count);
+
+/* ************************ texture_sample.c ************************* */
+int		color_to_int(t_color c);
+int		get_tex_pixel(t_texture *tex, int tx, int ty);
+int		get_tex_x(t_ray *ray, t_texture *tex);
+int		get_view_offset(t_raycaster *ray_data);
+
 /* ************************ renderer.c ****************************** */
 void	render_column(t_raycaster *ray_data, int col, t_ray *ray);
 void	render_frame(t_raycaster *ray_data);
-int		get_view_offset(t_raycaster *ray_data);
 
 /* ************************ mlx_engine.c ****************************** */
 int		init_mlx(t_raycaster *ray_data);

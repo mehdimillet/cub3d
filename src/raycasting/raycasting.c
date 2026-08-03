@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/27 19:02:10 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/03 14:47:26 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static double	get_delta_time(void)
 	return (dt);
 }
 
-
 static int	is_moving(t_raycaster *ray_data)
 {
 	return (ray_data->key_w || ray_data->key_s || ray_data->key_a
@@ -51,7 +50,7 @@ static void	update_bob(t_raycaster *ray_data, double dt)
 		return ;
 	}
 	ray_data->view_bob = (int)(sin(ray_data->anim_time * BOB_SPEED)
-		* BOB_AMPLITUDE);
+			* BOB_AMPLITUDE);
 }
 
 int	game_loop(t_raycaster *ray_data)
@@ -67,8 +66,8 @@ int	game_loop(t_raycaster *ray_data)
 	update_bob(ray_data, dt);
 	while (col < SCREEN_WIDTH)
 	{
-		angle = ray_data->player_angle - (FOV / 2.0)
-			+ ((double)col * FOV / SCREEN_WIDTH);
+		angle = ray_data->player_angle - (FOV / 2.0) + ((double)col * FOV
+				/ SCREEN_WIDTH);
 		cast_ray(ray_data, angle, &ray);
 		render_column(ray_data, col, &ray);
 		col++;

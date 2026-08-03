@@ -3,55 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   renderer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:41 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/30 17:56:20 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/03 15:29:57 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 #include "../headers/raycasting.h"
 
-static int	color_to_int(t_color c)
-{
-	return (c.red << 16 | c.green << 8 | c.blue);
-}
-
-static int	get_tex_pixel(t_texture *tex, int tx, int ty)
-{
-	char	*dst;
-
-	tx = tx % tex->width;
-	ty = ty % tex->length;
-	dst = tex->addr + (ty * tex->line_length + tx * (tex->bits_per_pixel / 8));
-	return (*(unsigned int *)dst);
-}
-
-static int	get_tex_x(t_ray *ray, t_texture *tex)
-{
-	double	wall_x;
-	int		tex_x;
-
-	if (ray->hit_vertical)
-		wall_x = ray->hit_x - floor(ray->hit_x);
-	else
-		wall_x = ray->hit_y - floor(ray->hit_y);
-	tex_x = (int)(wall_x * tex->width);
-	if (ray->hit_vertical && (int)floor(ray->hit_x) % 2 == 0)
-		tex_x = tex->width - 1 - tex_x;
-	else if (!ray->hit_vertical && (int)floor(ray->hit_y) % 2 == 0)
-		tex_x = tex->width - 1 - tex_x;
-	return (tex_x);
-}
-
-int	get_view_offset(t_raycaster *ray_data)
-{
-	return (ray_data->view_bob);
-}
-
-static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start,
-		int end)
+static void	draw_column(t_raycaster *rc, t_ray *ray, t_draw_col *dc)
 {
 	t_texture	*tex;
 	int			wall_height;
@@ -62,35 +24,35 @@ static void	draw_column(t_raycaster *rc, int col, t_ray *ray, int start,
 		tex = &rc->map->tex[4];
 	else
 		tex = &rc->map->tex[ray->wall_type];
-	wall_height = end - start;
+	wall_height = dc->end - dc->start;
 	if (wall_height <= 0)
 		wall_height = 1;
 	tex_x = get_tex_x(ray, tex);
 	y = 0;
-	while (y < start && y < SCREEN_HEIGHT)
-		put_pixel(rc, col, y++, color_to_int(rc->map->ceiling));
-	while (y <= end && y < SCREEN_HEIGHT)
+	while (y < dc->start && y < SCREEN_HEIGHT)
+		put_pixel(rc, dc->col, y++, color_to_int(rc->map->ceiling));
+	while (y <= dc->end && y < SCREEN_HEIGHT)
 	{
-		put_pixel(rc, col, y, get_tex_pixel(tex, tex_x,
-				((y - start) * tex->length) / wall_height));
+		put_pixel(rc, dc->col, y, get_tex_pixel(tex, tex_x,
+				((y - dc->start) * tex->length) / wall_height));
 		y++;
 	}
 	while (y < SCREEN_HEIGHT)
-		put_pixel(rc, col, y++, color_to_int(rc->map->floor));
+		put_pixel(rc, dc->col, y++, color_to_int(rc->map->floor));
 }
 
 void	render_column(t_raycaster *ray_data, int col, t_ray *ray)
 {
-	int	wall_height;
-	int	wall_start;
-	int	wall_end;
-	int	offset;
+	t_draw_col	dc;
+	int			wall_height;
+	int			offset;
 
 	offset = get_view_offset(ray_data);
 	wall_height = (int)(SCREEN_HEIGHT / ray->perp_dist);
-	wall_start = (SCREEN_HEIGHT - wall_height) / 2 + offset;
-	wall_end = (SCREEN_HEIGHT + wall_height) / 2 + offset;
-	draw_column(ray_data, col, ray, wall_start, wall_end);
+	dc.col = col;
+	dc.start = (SCREEN_HEIGHT - wall_height) / 2 + offset;
+	dc.end = (SCREEN_HEIGHT + wall_height) / 2 + offset;
+	draw_column(ray_data, ray, &dc);
 }
 
 void	render_frame(t_raycaster *ray_data)
