@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/04 13:26:01 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:36:33 by leauvray         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-#define BOB_SPEED 11.0
-#define BOB_AMPLITUDE 9.0
+#include "raycasting.h"
 
 static double	get_delta_time(void)
 {
