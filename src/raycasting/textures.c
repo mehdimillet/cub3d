@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 14:27:12 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/04 14:52:41 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:25:18 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	free_textures(t_raycaster *ray_data, int count)
 	while (i < count)
 	{
 		if (ray_data->map->tex[i].img)
+		{
 			mlx_destroy_image(ray_data->mlx_ptr, ray_data->map->tex[i].img);
+			ray_data->map->tex[i].img = NULL;
+		}
 		i++;
 	}
 }
@@ -59,7 +62,7 @@ int	load_textures(t_raycaster *ray_data)
 	while (i < max)
 	{
 		if (load_one_texture(ray_data, i))
-			return (1);
+			return (destroy_mlx(ray_data), 1);
 		i++;
 	}
 	return (0);

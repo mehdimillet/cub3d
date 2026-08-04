@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 14:19:32 by memillet          #+#    #+#             */
-/*   Updated: 2026/08/04 14:29:07 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:25:42 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int ac, char **av)
 		return (printf("Invalid Number of argument"), 1);
 	if (parse_the_world(av, &info) != 0)
 		return (1);
-	start_raycasting(&info);
+	if (start_raycasting(&info) != 0)
+    	return (free_cub(&info), 1);
 	free_cub(&info);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 00:00:00 by you               #+#    #+#             */
-/*   Updated: 2026/08/04 15:06:12 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:26:59 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define SCREEN_HEIGHT 720
 # define FOV 1.0471975511965976
 # define MOUSE_SENSITIVITY 0.003
+# define BOB_SPEED 11.0
+# define BOB_AMPLITUDE 9.0 
 
 typedef struct s_img
 {
