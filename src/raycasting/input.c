@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:17 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/03 14:24:54 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:25:19 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 static void	center_mouse(t_raycaster *ray_data)
 {

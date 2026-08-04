@@ -1,7 +1,7 @@
 NAME = cub3D
  
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -I.
+CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -f
  
 SRC_DIR = src
@@ -29,10 +29,10 @@ SOURCES =	$(SRC_DIR)/main.c \
 			$(SRC_DIR)/raycasting/renderer.c \
 			$(SRC_DIR)/raycasting/keys.c \
 			$(SRC_DIR)/raycasting/input.c \
-			$(SRC_DIR)/raycasting/movement.c\
-# 			$(SRC_DIR)/parsing/init_struct.c \
- 
-OBJECTS = $(SOURCES:.c=.o)
+			$(SRC_DIR)/raycasting/movement.c
+
+OBJS_DIR = objs
+OBJECTS = $(SOURCES:src/%.c=$(OBJS_DIR)/%.o)
  
 HEADERS = $(wildcard headers/*.h)
  
@@ -43,29 +43,35 @@ INCLUDES = -Iheaders -Ilibft -I$(MLX_DIR)
 
 LIBS = -L$(MLX_DIR) -lmlx -L/usr/lib/X11 -lXext -lX11 -lm
  
+GREEN = \033[1;32m
+RED = \033[1;31m
+RESET = \033[0m
  
 all: $(NAME)
  
 $(NAME): $(OBJECTS) $(LIBFT) $(MLX_LIB)
-	$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(LIBS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(LIBS) -o $(NAME)
  
 $(LIBFT):
-	make -C libft all
+	@make --no-print-directory -C libft all
 
 $(MLX_LIB):
-	make -C $(MLX_DIR)
+	@make --no-print-directory -C $(MLX_DIR)
  
-%.o: %.c $(HEADERS)
-	$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+$(OBJS_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+	@mkdir -p $(dir $@)
+	@$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+	@printf "$(GREEN)✔ Compilation terminée$(RESET)\n"
  
 clean:
-	$(RM) $(OBJECTS)
-# 	make -C libft clean
- 
+	@$(RM) -r $(OBJS_DIR)
+	@make --no-print-directory -C libft clean
+	@printf "$(RED)✖ Fichiers objets supprimés.$(RESET)\n"
+
 fclean: clean
-	$(RM) $(NAME)
-# 	make -C libft fclean
+	@$(RM) $(NAME)
+	@make --no-print-directory -C libft fclean
  
 re: fclean all
- 
+
 .PHONY: all clean fclean re

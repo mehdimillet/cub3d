@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 18:08:32 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 16:41:33 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:23:16 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
+#include "cub3d.h"
 
 void	toggle_door(t_raycaster *rc)
 {

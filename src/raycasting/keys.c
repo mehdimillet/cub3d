@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 14:24:07 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/03 14:47:44 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:25:27 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 // active le flag de la touche pressee
 int	key_press(int keycode, t_raycaster *ray_data)

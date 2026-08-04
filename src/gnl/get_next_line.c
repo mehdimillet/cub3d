@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:21:27 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 15:56:40 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:23:56 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/cub3d.h"
+#include "cub3d.h"
 
 static char	*ft_extract_line(char *buff_stay)
 {

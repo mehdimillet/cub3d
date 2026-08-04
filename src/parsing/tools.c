@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 16:49:25 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/29 18:12:39 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:24:59 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
+#include "cub3d.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

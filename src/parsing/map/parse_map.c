@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:26:30 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/29 21:26:41 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:24:38 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 
 static double	char_to_angle(char c)
 {

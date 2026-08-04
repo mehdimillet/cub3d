@@ -6,12 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:29 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/29 17:55:04 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:25:47 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/includes.h"
+#include "cub3d.h"
 
 // fonction pour transformer angle en radian valide de 0-2pi(2pi = 360 degrees)
 double	normalize_angle(double angle)

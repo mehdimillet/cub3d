@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 05:11:16 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/25 17:05:43 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:24:17 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
+#include "cub3d.h"
 
 int	choose_fc(t_cub *info, char *line)
 {

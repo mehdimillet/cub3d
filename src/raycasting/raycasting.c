@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:34 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/03 14:47:26 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:26:01 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 #define BOB_SPEED 11.0
 #define BOB_AMPLITUDE 9.0
@@ -77,6 +76,8 @@ int	game_loop(t_raycaster *ray_data)
 	return (0);
 }
 
+// mlx_mouse_hide(ray_data.mlx_ptr, ray_data.win_ptr);
+// top of mlx_mouse_move 
 int	start_raycasting(t_cub *map)
 {
 	t_raycaster	ray_data;
@@ -91,7 +92,6 @@ int	start_raycasting(t_cub *map)
 	ray_data.mouse_initialized = 1;
 	ray_data.mouse_ignore_next = 0;
 	ray_data.last_mouse_x = SCREEN_WIDTH / 2;
-	mlx_mouse_hide(ray_data.mlx_ptr, ray_data.win_ptr);
 	mlx_mouse_move(ray_data.mlx_ptr, ray_data.win_ptr, SCREEN_WIDTH / 2,
 		SCREEN_HEIGHT / 2);
 	mlx_hook(ray_data.win_ptr, 2, 1L << 0, key_press, &ray_data);

@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 07:17:39 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 16:33:29 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:24:23 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
+#include "cub3d.h"
 
 static int	check_dup(t_cub *info, int idx)
 {

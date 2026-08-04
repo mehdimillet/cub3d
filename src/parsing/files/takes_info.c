@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   takes_info.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 15:49:24 by memillet          #+#    #+#             */
-/*   Updated: 2026/06/30 13:28:51 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:24:10 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
+#include "cub3d.h"
 
 int	get_fd(char *file)
 {

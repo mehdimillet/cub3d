@@ -6,12 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 17:03:03 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/30 18:03:27 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:25:09 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 static void	calc_delta(t_dda *dda)
 {

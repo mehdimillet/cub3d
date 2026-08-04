@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 14:27:12 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/03 14:47:40 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:26:25 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 void	free_textures(t_raycaster *ray_data, int count)
 {

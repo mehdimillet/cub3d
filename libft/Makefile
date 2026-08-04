@@ -18,19 +18,19 @@ CC = cc
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) $(NAME) $(OBJECTS)
+	@$(AR) $(NAME) $(OBJECTS)
 
 bonus: $(OBJECTS) $(BONUS:.c=.o)
-	$(AR) $(NAME) $(OBJECTS) $(BONUS:.c=.o)
+	@$(AR) $(NAME) $(OBJECTS) $(BONUS:.c=.o)
 
 %.o: %.c libft.h
-	$(CC) -c $(CFLAGS) $< -o $@
+	@$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	$(RM) $(OBJECTS) $(BONUS:.c=.o)
+	@$(RM) $(OBJECTS) $(BONUS:.c=.o)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

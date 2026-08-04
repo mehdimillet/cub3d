@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 18:44:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 15:51:19 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:23:41 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
+#include "cub3d.h"
 
 void	put_tile(t_raycaster *rc, int px, int py, int color)
 {
@@ -78,8 +78,10 @@ void	draw_minimap(t_raycaster *rc)
 		{
 			if (rc->map->map[y][x] == '1')
 				put_tile(rc, x * rc->tile, y * rc->tile, MINIMAP_WALL);
-			else if (ft_strchr("0NSEW", rc->map->map[y][x]))
+			else if (ft_strchr("0NSEWO", rc->map->map[y][x]))
 				put_tile(rc, x * rc->tile, y * rc->tile, MINIMAP_FLOOR);
+			else if (rc->map->map[y][x] == 'D')
+				put_tile(rc, x * rc->tile, y *rc->tile, MINIMAP_DOOR);
 			x++;
 		}
 		y++;

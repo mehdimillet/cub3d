@@ -6,11 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:27:10 by memillet          #+#    #+#             */
-/*   Updated: 2026/07/31 16:16:46 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:24:33 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../headers/cub3d.h"
+#include "cub3d.h"
 
 int	file_to_map(char **file, t_cub *info)
 {

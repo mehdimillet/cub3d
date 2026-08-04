@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   renderer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:41 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/03 15:29:57 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:26:08 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 static void	draw_column(t_raycaster *rc, t_ray *ray, t_draw_col *dc)
 {

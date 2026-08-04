@@ -6,13 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:22 by leauvray          #+#    #+#             */
-/*   Updated: 2026/07/30 17:58:22 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:25:38 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
-#include <math.h>
+#include "cub3d.h"
 
 #define MOVE_SPEED 3.0
 #define ROTATE_SPEED 2.0

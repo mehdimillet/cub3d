@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   texture_sample.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leauvray <leauvray@student.42lehavre.fr>   +#+  +:+       +#+        */
+/*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 15:19:51 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/03 15:29:52 by leauvray         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:26:14 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/cub3d.h"
-#include "../headers/raycasting.h"
+#include "cub3d.h"
 
 int	color_to_int(t_color c)
 {
