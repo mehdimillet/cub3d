@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 05:11:16 by memillet          #+#    #+#             */
-/*   Updated: 2026/08/04 13:24:17 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:00:07 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	check_values(char **values)
 				return (error_msg("Error\nNon-digital character\n"), 1);
 			j++;
 		}
-		if (my_atol(values[i]) > 255)
+		if (my_atol(values[i]) > 255 || my_atol(values[i]) == -1)
 			return (error_msg("Error\nWrong values\n"), 1);
 		i++;
 	}
