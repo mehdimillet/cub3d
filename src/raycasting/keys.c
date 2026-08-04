@@ -6,13 +6,13 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 14:24:07 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/04 13:25:27 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:26:11 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// active le flag de la touche pressee
+// activates the key flag 
 int	key_press(int keycode, t_raycaster *ray_data)
 {
 	if (keycode == 119)
@@ -34,7 +34,7 @@ int	key_press(int keycode, t_raycaster *ray_data)
 	return (0);
 }
 
-// desactive le flag de la touche relachee
+// deactivates the flag of the released key
 int	key_release(int keycode, t_raycaster *ray_data)
 {
 	if (keycode == 119)

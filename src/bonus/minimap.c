@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 18:44:18 by memillet          #+#    #+#             */
-/*   Updated: 2026/08/04 13:23:41 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:30:08 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	draw_minimap(t_raycaster *rc)
 			else if (ft_strchr("0NSEWO", rc->map->map[y][x]))
 				put_tile(rc, x * rc->tile, y * rc->tile, MINIMAP_FLOOR);
 			else if (rc->map->map[y][x] == 'D')
-				put_tile(rc, x * rc->tile, y *rc->tile, MINIMAP_DOOR);
+				put_tile(rc, x * rc->tile, y * rc->tile, MINIMAP_DOOR);
 			x++;
 		}
 		y++;

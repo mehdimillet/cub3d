@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:22 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/04 13:25:38 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:28:29 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define MOVE_SPEED 3.0
 #define ROTATE_SPEED 2.0
 
-// retourne 1 si la case est accessible (pas un mur, pas hors map)
+// returns 1 if the box is accessible (not a wall, not off-map)
 int	is_walkable(t_cub *map, double x, double y)
 {
 	int	gx;
@@ -39,7 +39,7 @@ int	is_walkable(t_cub *map, double x, double y)
 	return (0);
 }
 
-// deplace le joueur selon les touches WASD, bloque si mur
+// moves the player according to the WASD keys, blocks if wall
 static void	move_player(t_raycaster *rc, double dx, double dy)
 {
 	if (rc->key_w && is_walkable(rc->map, rc->player_x + dx, rc->player_y + dy))
@@ -64,7 +64,7 @@ static void	move_player(t_raycaster *rc, double dx, double dy)
 	}
 }
 
-// applique deplacement et rotation selon les flags clavier
+// applies movement and rotation according to the keyboard flags
 void	update_player(t_raycaster *rc, double dt)
 {
 	double	speed;

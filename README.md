@@ -86,6 +86,7 @@ WE ./path/to/west_texture.xpm
 EA ./path/to/east_texture.xpm
 D ./path/to/door_texture.xpm
 
+```
 F 220,100,0
 C 225,30,0
 
@@ -93,6 +94,7 @@ C 225,30,0
 100101
 1010N1
 111111
+```
 
 - `NO`, `SO`, `WE`, `EA` — paths to the wall textures for each cardinal direction
 - `D` — path to the door texture [bonus; CONFIRM your identifier]

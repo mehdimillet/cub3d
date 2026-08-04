@@ -6,15 +6,11 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 14:19:32 by memillet          #+#    #+#             */
-/*   Updated: 2026/08/04 13:21:34 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:29:07 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-// #include "../headers/raycasting.h"
-
-// ./cub3d map.cub
 
 int	main(int ac, char **av)
 {

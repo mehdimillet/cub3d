@@ -6,13 +6,13 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:08 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/04 13:25:32 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:28:00 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// stock les valeurs de la mlx dans la structure ray_data
+// stores the values of the mlx in the ray_data structure
 int	init_mlx(t_raycaster *ray_data)
 {
 	ray_data->mlx_ptr = mlx_init();
@@ -36,7 +36,7 @@ int	init_mlx(t_raycaster *ray_data)
 	return (0);
 }
 
-// ecrire le color dans l'adresse du buffer
+// write the color in the buffer address
 void	put_pixel(t_raycaster *ray_data, int x, int y, int color)
 {
 	char	*dst;
@@ -48,7 +48,7 @@ void	put_pixel(t_raycaster *ray_data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-// detruire les valeurs de la struct qu'on a set dans init_mlx
+// destroy the values of the struct that we set in init_mlx
 void	destroy_mlx(t_raycaster *ray_data)
 {
 	free_textures(ray_data, 4 + (ray_data->map && ray_data->map->seen[D] == 1));

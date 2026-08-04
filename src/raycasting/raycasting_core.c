@@ -6,7 +6,7 @@
 /*   By: memillet <memillet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 14:38:29 by leauvray          #+#    #+#             */
-/*   Updated: 2026/08/04 13:25:47 by memillet         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:28:42 by memillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ double	normalize_angle(double angle)
 	return (angle);
 }
 
-// regarde dans quelle direction le rayon allait, N, S, W, E.
+// function to transform angle into valid radian of 0-2pi(2pi = 360 degrees)
 int	get_wall_type(t_ray *ray)
 {
 	double	dir_x;
